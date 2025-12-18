@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+<body>
+    <h style ="color: chartreuse;text-align: center;">This Keyword In javaScript</h>
+    <p id = "demo">
+
+
+    </p>
+</body>
+<script>
+    /*const person = {
+        firstname:"Amit",
+        Lastname: "Yadav",
+        sum:function()
+        {
+           a = 10;
+           b = 20;
+           c = a+b;
+           console.log("sum of two no "+c);
+           console.log(this.firstname);
+           console.log(this); 
+        }
+    }
+    person.sum();*/
+
+    //function call using mthis keyword
+
+
+    const Person ={
+        fullname:function()
+        {
+            console.log(this);
+           // return this.firstname+ " "+this.secondname;
+        }
+    }
+    const Person1 ={
+        firstname:"elon",
+        secondname:"musk"
+
+    }
+    const Person2={
+        firstname:"meloni",
+        secondname:"jorge"
+    }
+   console.log( Person.fullname.call(Person1));
+</script>
+</html>

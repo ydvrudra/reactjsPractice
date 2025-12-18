@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+   <p>javascript objects</p>
+   <p id ="demo"></p> 
+   <script>
+    
+
+    // 1. create a object
+     
+
+     const person ={
+        name:"amit",
+        gender:"male",
+        address:"panna"
+
+     }
+     console.log(" my name is " +person.name+" my gender " +person.gender+ "my address is " +person.address);
+
+
+
+
+     // 2. adding new property in object
+     // 3.deleting a property
+
+
+     const Car ={
+        name:"bmw",
+        company:"xuv"
+     }
+     Car.modelyear = 2012;
+     console.log(Car.name+" "+Car.company+" "+Car.modelyear);
+
+
+
+
+
+     // 4. create Nested object
+
+
+     const mobile ={
+                    
+             name:"Redmi Note 5 pro",
+             Ram:"4GB",
+             Rom:"5G",
+             Laptops:{
+                name1:"Asus",
+                name2:"intel",
+                name3:"HP"
+             }        
+
+     }
+     console.log(mobile.Laptops.name);
+
+
+     const student = {
+      name:"amit",
+      age:21,
+      college:"ln",
+      address:"bhopal"
+     }
+     console.log(`my name is ${person.name} and college is ${student.college}`)
+
+
+
+
+   </script>
+</body>
+</html>

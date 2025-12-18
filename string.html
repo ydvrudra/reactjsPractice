@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string in javascript</title>
+</head>
+<body>
+    <script>
+    let x = "john";
+    let y = new String("john");
+    console.log( typeof x+ " "+ typeof y);
+    console.log(x===y); // when using the === operator x & y are not equal
+    console.log(x==y); // when using the == operator x & y are equal
+
+
+
+    // Strings methos 
+
+
+    let str = "my name is vinod bahadur thapa";
+    let str1 = "my name is sohan meena";
+    
+    console.log(str.length);    // find the string length.
+    console.log(str.charAt(3)); // returns at a specified index position
+    console.log(str.slice(3,8)); //slice methid hume ek position se dusri position tak(3,8) string return deta h
+    console.log(str.slice(8));
+    console.log(str.slice(-10));
+    console.log(str.toUpperCase());
+    console.log(str.toLowerCase());
+    console.log(str.concat(str1));
+    console.log(str.startswith("m"));
+
+
+
+
+
+    </script>
+</body>
+</html>

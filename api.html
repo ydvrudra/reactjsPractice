@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <p id ="demo"></p>
+</body>
+<script>
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m')
+   .then((apidata) =>
+   {
+    return apidata.json();
+   })
+   .then((actualdata) =>
+   {
+    console.log(actualdata);
+
+   //document.getElementById("demo").innerHTML = 'mydata';
+})
+.catch((error) =>
+{
+    console.log(error);
+}
+);
+</script>
+</html>
+   

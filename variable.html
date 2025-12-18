@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables in javascript</title>
+</head>
+<body>
+    <p1 id = "demo"></p1>
+    <h1>this is variables in java script</h1>
+</body>
+<script>
+
+
+// var -  function scope/global scope
+//let & const - block scope
+
+
+/* var name = "sizuka";
+    name = "shree";
+    console.log(name);
+
+
+
+let Name = "bahadur";
+   Name  =  " thapa";
+   console.log(Name);
+
+
+
+const college = "Lnct";
+     college = "excellence";
+   console.log(college); */
+
+
+
+// var - function scope/local scope/global scope- ise hum block ke under ya bahar console kar sakte hai
+
+function biodata(person)
+{
+   if(person)
+    {
+      var name = "sohan";
+      var address = "bhopal";
+      console.log(`my name is ${name} my address is ${address}.`); 
+    }
+
+    //console.log(`my name is ${name} my address is ${address}.`); 
+}
+
+ biodata(true);
+
+
+
+
+ // let & const -block scope
+
+ {
+    let name = "sohil";
+    const gender ="male";
+
+    console.log(name+" "+gender); // block scope
+ }
+    //console.log(name+ " ",gender);   // Error
+
+
+
+    var stu = "jinip";
+    {
+        var stu = "amola";
+        console.log(stu);
+    }
+    console.log(stu);
+
+
+
+    let name = "suneel";
+    {
+        let name = "sumit";
+        console.log(name);
+    }
+    console.log(name);
+                                                                           
+
+</script>
+</html>

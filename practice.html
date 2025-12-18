@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+<body>
+    <h1></h1>
+    <p id = "demo"></p>
+
+    <script>
+
+// function in javascript
+
+/*const biodata = [{
+     id:"304",
+     name:"suneel",
+     email:"",
+     college:"",
+     age:26,address:"bhopal",
+     roll_no:34523
+
+    }];
+
+    {
+        biodata.filter((val,index)=>{
+        console.log(val.id);
+    })
+}*/
+
+
+// javascript interview question
+
+// 1.
+
+/*function fruits ()
+{
+
+    console.log(name);
+    console.log(price);
+
+    var name = "Apple";
+    let price = 20;
+}
+fruits(); 
+*/
+
+// 2.
+
+
+/*for (var i=0;i<3;i++)
+{
+    setTimeout(()=>console.log(i),2000);
+} */
+
+
+
+
+
+// 3.
+
+// for(let i= 0; i<3;i++)
+// {
+//     setTimeout(()=>console.log(i),2000);
+// } 
+
+
+
+
+
+
+// 4.
+
+/*console.log(+true);
+console.log(typeof +true);
+
+
+console.log(!"amit");
+console.log(typeof("amit")); */
+
+
+
+// 5.
+
+
+/*let data = "size";
+
+const bird = {
+    size:"small",
+
+}
+
+console.log(bird[data]);
+console.log(bird["size"]);
+console.log(bird.size);
+console.log(bird.data); */
+
+
+
+
+
+//6.
+
+/*let c = {name:"peter"};
+
+let d;
+
+ d = c;
+
+
+ c.name = "peter";
+
+ console.log(d.name);
+*/
+
+
+// 7.
+
+
+/* var x;
+var x = 10;
+console.log(x);  */
+
+
+
+
+
+// 8.
+
+
+let a = 6;
+
+let b = "6";
+
+
+console.log(a == b);
+console.log(a ===b); 
+
+
+
+
+
+// 9.
+
+/*
+function sum(a,b)
+{
+    console.log(a+b);
+
+}
+
+sum(1,"2");
+*/
+
+
+
+//10.
+
+/*
+let number= 0;
+
+console.log(number++);
+console.log(++number);
+console.log(number);
+*/
+
+
+
+
+// 11.
+
+
+/*
+const getAge = (...what) =>
+{
+   console.log(typeof what);
+}
+getAge(21);
+
+*/
+
+
+
+
+// 12.
+
+
+/*
+const getAge = () =>{
+    'use strict'
+   //  age = 21;     //error
+   let age = 21;
+   console.log(age);
+
+}
+getAge();
+*/
+
+
+
+
+
+
+// 13.
+
+
+/*
+const sum = eval("10*5+3");
+console.log(sum);
+*/
+
+
+
+
+// 14.
+
+
+/*
+const obj = {a:'rudra',b:"amit",a:"sumit"};
+console.log(obj);
+
+*/
+
+
+// 15.
+
+
+/*
+for(let i=0;i<5;i++)
+{
+    if(i===3) continue;
+    console.log(i);
+}
+*/
+
+
+// 16
+
+
+/*
+const fun1 = (()=>console.log("first"));
+
+const fun2 = ()=> setTimeout(()=>console.log("second"));
+
+const fun3 = (()=>console.log("third"));
+
+fun2();
+fun1();
+fun3();
+*/
+
+
+
+
+// 17.
+
+
+/*
+const person ={name:"shree"};
+
+const sayhii = ((age)=>{
+    return `${this.name} is ${age}`;
+});
+console.log(sayhii.call(person,21));
+console.log(sayhii.bind(person,21));
+*/
+
+
+//18.
+
+
+
+/*
+const number = [1,2,5];
+
+number[9] = 11;
+
+console.log(number);
+*/
+
+
+
+//19
+
+/*
+const number = [1,2,3];
+number[3] = number;
+console.log(number);
+*/
+
+
+
+// 20..
+
+
+/*
+console.log(!!null)
+console.log(!!"");
+console.log(!!1);
+*/
+
+
+//21..
+
+
+
+
+/*
+console.log(setInterval(()=>console.log('hii'),2000));
+console.log(setInterval(()=>console.log('hii'),2000));
+console.log(setInterval(()=>console.log('hii'),2000));
+
+*/
+
+
+
+
+
+// 22...
+
+
+/*
+console.log([..."amiy"]);
+console.log(..."amiy");
+console.log(...[1,3,5,9]);
+//console.log(...amiy);
+
+
+let data = 3+8+"8";
+
+console.log(typeof data);
+
+console.log(typeof 3+9+"5");
+console.log(typeof (3+9+ +"5"));
+console.log([] == []);
+*/
+
+
+
+
+
+// 23..
+
+/*
+const getname = (member) =>{
+
+    member.name = "amit";
+
+}
+const person = {name:"sumit"};
+
+getname(person);
+console.log(person);
+*/
+
+
+
+
+// 24..
+
+
+/*
+function car(){
+    this.make = 'honda';
+    return {make:"suzuki"};
+};
+
+const mycar = new car();
+console.log(mycar.make);
+*/
+
+
+
+
+// 25...
+
+
+/*
+(()=>{
+
+    let x = (y = 10);
+})
+();
+console.log( typeof x);
+
+
+
+
+
+/*
+
+(()=>{
+    let a = b = 10;
+})
+();
+console.log(  typeof b);
+
+
+
+
+
+
+(()=>{
+    let x = 20;
+})
+();
+
+(()=>{
+    let x = 20;
+
+})
+();
+console.log( typeof x);
+
+
+
+(()=>{
+    let m = n = 100;
+})
+();
+
+(()=>{
+    let m = n = 200;
+})
+();
+
+console.log(n);
+
+
+
+let mn = 80;
+
+(()=>{
+    var p = 30;
+})
+();
+console.log("hel",p);
+
+// 26..
+/
+
+console.log("2"+1);
+console.log("2"-1);
+console.log(+"2" +1);
+console.log(1+ -"1" +"2");
+console.log(3>2>1);
+console.log(true>1);
+console.log(3<2<1);
+console.log(1<2<3);
+console.log(false>1);
+console.log("2" +1);
+*/
+
+
+
+
+// 27..
+
+/* setTimeout(()=>{
+    console.log(1);
+},0);                             // 2 5 3 1 4
+console.log(2);
+
+
+Promise.resolve().then(()=>{
+    console.log(3);
+});
+
+
+setTimeout(() => {
+    console.log(4);
+}, 0);
+console.log(5)
+*/
+
+
+
+// 27...
+/*
+
+var i = 1
+function test()
+{
+    console.log(i);
+    var i = 7;
+}
+test();
+
+
+let pp = 8;
+function num()
+{
+    //console.log("pppp",pp);
+    let pp =9;
+    console.log(pp);
+}
+num();
+
+
+
+
+const x = 6;
+
+function sum()
+{
+
+    console.log(x);
+    const x = 9;
+}
+sum();
+
+
+*/
+
+// 28...
+
+
+/*
+function pool()
+{
+    var a =b =0;
+    a++;
+    return a;
+
+}
+pool();
+console.log(typeof b); // number
+console.log(a); // undefined
+*/
+
+
+
+
+
+
+// 29.. var,let,const
+//  me function ke bahar ki value fun ke under access kar sakte hai but function ke under ki value function
+// ke bahar console nahi kr sakte that is laxical scope
+
+
+
+// var name = 23;
+// function hello()
+// {
+//     //var name = 12;
+//     console.log(name);
+
+// }
+// hello();
+//console.log(name);
+
+
+
+
+
+// let & const  me block e under console karane par under ki value print karega or block ke bahar console
+// karane par block ke bahar ki value print karega;
+
+
+
+
+/*
+function sum()
+{
+    let x = 30;
+
+}
+sum();
+console.log(x);
+
+
+const m = 20;
+function hii()
+{
+    const m = 40;
+    console.log(m);
+}
+hii();
+console.log(m);
+*/
+
+
+
+
+
+// 30..
+/*
+let x = [];
+let y = [];
+
+
+console.log(x==y);
+console.log(x === y);
+
+let n = [];
+let o = a;
+
+console.log(n ==o);
+console.log(n ===o);
+*/
+
+
+
+
+
+//31..
+
+/*
+
+let x = [20];
+let y = [20];
+
+console.log(x[0] == y[0]);
+console.log(x[0] ===y[0]);
+
+*/
+
+
+
+
+
+// 32..
+/*
+
+let x =[1,2,3,4];
+
+let y = {name:'anil'};
+console.log(...x);
+
+let z = 10- -10;
+
+console.log(z);
+
+*/
+
+
+
+
+// set method ka use duplicate array ko delete karne ke liye kiya jata hai
+
+// 33..
+/*
+
+const array  = new Set([1,1,3,4,2,5,7,3]);
+
+console.log(array);
+
+
+let data = {name:'manoj'};
+
+console.log( delete data.name);
+console.log(delete data);
+
+*/
+
+// 34..
+
+/*
+const data = ["peter","santoor","shree"];
+
+const[y] = data;
+console.log(y);
+
+const person = {name:"sonu",age:24,address:"pune"};
+
+const{age} = person;
+
+console.log(age);
+
+*/
+
+
+
+
+
+// 35..
+
+
+
+/*
+let person1 = {name:"shivi",age:21,address:"bhopal"};
+let person2 = {city:"indore",address:"pune"};
+
+ person1 = {...person1,...person2};
+console.log(person1)
+
+person1 = {person1,...person2};
+console.log(person1);
+*/
+
+
+
+/*
+console.log(Promise.resolve(8));
+*/
+
+
+
+
+
+// 36
+
+/*
+//var name = 27;
+function hello()
+{
+    var name = 12;
+    //console.log(name);
+
+}
+hello();
+console.log(name);
+
+
+
+
+var name = 27;
+function hello()
+{
+    //var name = 12;
+    console.log(name);
+
+}
+  name = "hello";
+hello();
+//console.log(name);
+*/
+
+
+// 37..
+/*
+function array(x,y,z)
+{
+    console.log(x+y+z);
+
+}
+array(...[1,2,3]);
+*/
+
+
+
+// 38
+
+/*
+const name = "suneel";
+const age = 23;
+
+console.log(isNaN(name));              // isNaN means not a number
+console.log(isNaN(age));
+ */
+
+
+// 39..
+/*
+
+let array = [1,2,4,5];
+delete array[3];
+console.log(array);
+
+let a = 2;
+setTimeout(()=>{
+    console.log(a);
+},0);
+a = 100;
+
+*/
+
+
+// 40
+
+/*
+let a = 10
+let b = 11
+
+console.log(--b === a);
+
+*/
+
+
+
+/*
+
+let a =1;
+let b =1;
+let c =2;
+
+console.log(a === b === --c); // a===b is true(that is boolean value) and --c(1) is numeric value
+
+console.log(3*3);
+console.log(3**3);
+//console.log(3***3);
+
+*/
+
+
+// 41. string based questions
+
+/*
+ let str = "my name is Rudra Yadav";
+
+console.log(str);
+console.log([...str]);
+console.log(str.split(''));
+console.log(str.split(' '));
+console.log(str.replace("m","h"));
+console.log(str.substring(2,6));
+console.log(str.substring(2,str.length));  // starting char remove
+console.log(str.substring(2,str.length-1)); // last se char remove
+
+let stri = " hello how are you";
+
+let newstr = stri.split("o");
+console.log(newstr[0]);
+console.log("trim",str.trim()); 
+*/
+
+// jitne bhi iterable object hai un sabhi ko iterate karne ke liye for of loop ka use karte hai 
+// jaise ki array, string,
+/*
+const myname = [1,2,3,5,3];
+for(let char of myname)
+{
+    console.log(char);
+}*/
+
+// for in loop ka used object ko print karne ke liye kiya jata hai
+// for in loop is allowed to acces the key of object properties.
+
+
+/*
+var student = {
+    firstName:"rudra",
+    middleName:"pratap",
+    lastName:"yadav",
+    age:24
+}
+
+for(var data in student)
+{
+    console.log(data+ " "+student[data]);
+}
+
+
+const obj = {a:1,b:1,c:3};
+
+for(let key in obj)
+{
+    console.log(key);
+};*/
+
+
+
+/*const mypromise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('i love you');
+        reject("error");
+    },2000);
+});
+mypromise.then((value)=>{
+    console.log(value);
+});
+mypromise.catch((error)=>{
+    console.log(error);
+});*/
+
+
+/*
+const mypromise = new Promise((resolve,reject)=>{
+
+    let x = 0
+
+    if(x ==0)
+    {
+        setTimeout(() => {
+            resolve("ok");
+        }, 2000);
+
+    }
+    else
+    {
+        reject("error")
+    }
+})
+
+
+async function getdata() 
+{
+    const result = await mypromise;
+    console.log(result);
+
+}
+getdata();
+*/
+
+
+
+const student = [{
+    names:"sagar",
+    address:"bhopal",
+    age:24,
+    college:"lnct",
+    marks:90,
+    course:"mca"
+}];
+
+const {names,college,marks} = student;
+
+const newarr = student.map((data)=>{
+    return `my name is ${data.names} and my college is ${data.college} marks is ${data.marks}`;
+  
+})
+console.log(newarr);
+
+
+
+const shopping  = [
+    {
+    books:"histry",
+    price:100,
+},
+
+{
+    books:"geography",
+    price:200,
+},
+
+{
+    books:"geography",
+    price:300,
+},
+
+{
+    books:"geography",
+    price:400,
+},
+]
+
+const totalprice = shopping.reduce((preval,currentval)=>
+{
+    return preval + currentval.price;
+},0)
+console.log(totalprice);
+
+var stu = null;
+    console.log(stu);
+    console.log(typeof stu);
+
+
+    const outerfun = (a) =>
+    {
+        let b = 10;
+
+        const innerfun  = () =>
+        {
+            const c = a+b;
+
+            console.log(c);
+        }
+        innerfun();
+    }
+    outerfun(20);
+
+
+    const studentss = ["manoj","sanoj","panoj","rohan","sohan"];
+
+    console.log(studentss.slice(1,4));
+    console.log(studentss.slice(1));
+    console.log(studentss.slice(0,0));
+    console.log(studentss.slice(0,1));
+    console.log(studentss.slice(1,0));
+    console.log(studentss.slice(0,0));
+    console.log(studentss.slice(-3,-1));
+
+    const data = ["mango","banana","orange","apple"];
+
+
+    data.splice(-2,0,"kiwi","papaya");
+    console.log(data)
+
+    const findarr = [28,5,70,8,12,54,21];
+
+const result = findarr.find((val,index,array)=>{
+    return val>=20;
+});
+console.log(result);
+
+const books = ["physics","chemistry","math","hindi","english"];
+
+console.log(books.includes("hindi"));
+console.log(books.includes("english"));
+
+
+
+
+
+   </script>
+</body>
+</html>

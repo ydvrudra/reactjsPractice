@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <h1> This Is javascript closure</h1>
+
+</body>
+<script>
+   const outerfun = (a) =>
+   {
+     let b =10;
+     const innerfun =() =>
+     {
+        let sum = a+b;
+        console.log(`the sum of two no is ${sum}.`);
+
+     }
+     innerfun();
+   }
+   outerfun(5);
+
+
+
+   // 2. example 
+
+
+
+   const interviewques =(name) =>
+   {
+    return function(topic)
+    {
+       if(name == "vinod")
+       {
+        console.log(`hi ${name}. plz explain the ${topic}.`);
+       } 
+       else if(name == "vipin")
+       {
+        console.log(`hi ${name}. plz explain the ${topic}.`);
+       } 
+       else if(name == "manoj")
+       {
+        console.log(`hi ${name}. plz explain the ${topic}.`);
+       } 
+       else
+       {
+        console.log("welcome to Lnct");
+       }
+       
+    }
+   }
+
+   interviewques("vinod")("Ui");
+   interviewques("vipin")("Api");
+   interviewques("manoj")("js");
+
+
+
+const OuterFun = () =>
+{
+   let a = 10;
+   let b = 20;
+   
+   const InnnerFun =() =>
+   {
+      c = a+b;
+      console.log(c)
+   }
+   InnnerFun();
+}
+outerfun();
+
+</script>
+</html>

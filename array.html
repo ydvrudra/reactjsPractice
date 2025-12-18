@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h1>This Is an Array</h1>
+    <p id = "demo"></p>
+    <!-- <button onclick="myfunction()">try it </button> -->
+</body>
+<script>
+
+    // //array access
+    // const fruits = ["apple","banana","orange","grapes",675];
+    // fruits[2] = "kiwi";
+    // document.getElementById("demo").innerHTML = fruits;
+
+
+
+
+    // //array object
+    // const person = {firstName:"Amit",LastName:"Yadav",Age:23};
+    // document.getElementById("demo").innerHTML = person.firstName;
+
+    // //array length properties
+    // const course = ["BSC","MSC","BTEC","MTEC"];
+    // let size = course.length;
+    // document.getElementById("demo").innerHTML = size;
+
+    //accessing the last array element
+    // const subjects = ["Data Mining","AI","Python","distributed system"];
+    // document.getElementById("demo").innerHTML = subjects[subjects.length-1];
+
+
+    //  //adding array element
+    // const model = ["bmw","maruti","tiago","honda"];
+    // model.push("honda");
+    // document.getElementById("demo").innerHTML = model;
+
+   
+
+    // //adding array element on button
+
+    // const mobile = ["redmi","iphone","Samsung","Nokia"];
+    // document.getElementById("demo").innerHTML = mobile;
+
+    // function myfunction()
+    // {
+    //     mobile.push("Realmi");
+    //     document.getElementById("demo").innerHTML = mobile;
+
+    //     //margin array element
+    //  const name = ["Amit","sumit","rohit","sohit"];
+    // const sirname = ["yadav","Mishra","gupta","meena"];
+    // const mypeople  =  name.concat(sirname);
+    // document.getElementById("demo").innerHTML = mypeople;
+    // }
+
+
+
+    // slice method creates a new array 
+    // in slice method we can't remove any array element 
+    // slice method takes two parameter (srart,end)
+
+    // const stu = ["manoj","sanoj","panoj","rohan","sohan"];
+
+    // console.log(stu.slice(1,4));
+    // console.log(stu.slice(1));
+    // console.log(stu.slice(0,0));
+    // console.log(stu.slice(0,1));
+    // console.log(stu.slice(1,0));
+    // console.log(stu.slice(0,0));
+    // console.log(stu.slice(-3,-1));
+
+
+
+    // //splice method is used to add new items in array
+
+    // const data = ["mango","banana","orange","apple"];
+
+
+    // data.splice(-2,2,"kiwi","papaya");
+    // console.log(data)
+
+    
+
+    // find() method condition ke according starting se value ko check karta hai and return karta hai 
+
+
+    const findarr = [28,5,70,8,12,54,21];
+
+    const result = findarr.find((val,index,array)=>{
+        return val>=20;
+    });
+    console.log(result);
+
+    
+
+//     // findindex() method condition ke according starting se index number ko check karta hai and index no return karta hai 
+
+
+//     const findind = [28,5,70,8,12,54,21];
+
+//     const resultind = findind.findIndex((val,index,array)=>{
+//         return val>=29;
+//     });
+//     console.log(resultind);
+
+
+//     // indexOf() methed index no search karke deta hai
+//     // agr array ke under element exist nahi hai to -1 return karega
+
+//     const indexofmt = ["mohan","sonali","sachin","yash","rohan","naman","yash"];
+
+//     console.log(indexofmt.indexOf("yash",4));
+
+
+// //     lastindexOf() methed last se index no search karke deta hai
+//     // agr array ke under element exist nahi hai to -1 return karega
+
+
+//     const indexoflastmt = ["mohan","sonali","sachin","rohan","naman","yash"];
+
+// console.log(indexoflastmt.indexOf("yash",3));
+
+
+// // includes() method 
+
+
+const books = ["physics","chemistry","math","hindi","english"];
+
+console.log(books.includes("hindi"));
+console.log(books.includes("english"));
+
+
+// /*
+// var ca =["kdd"]
+// const ca = ["hgfgf"];
+
+// console.log(carss);
+// */
+
+
+
+// {
+//     let name = "sohil";
+//     var gender ="male";
+
+//     //console.log(name+" "+gender); // block scope
+//  }
+//     console.log(name+ " ",gender);   // Error
+
+
+
+//     const fun1 =() =>
+//    {
+//     console.log("hii");
+//    }
+
+//    const fun2 =(callback) =>
+//    {
+//     console.log("how are you");
+//     callbacck()
+//    }
+
+//    fun2(fun1);
+
+let a = 10;
+const b = "1";
+
+console.log(a == b);
+
+
+
+// </script>
+// </html>

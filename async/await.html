@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async await in javascript</title>
+</head>
+<h> hello</h>
+<p id = "demo"></p>
+<body>
+   <script>
+     // Async/Await - make promises easier to write 
+       // Async makes a function return a promise
+       // Await makes a function wait for a promise
+    
+
+
+/*
+const mypromise = new Promise( (resolve,reject)=>{
+    setTimeout(()=>{
+        let roll_no =[1,2,3,4,5];
+        resolve(roll_no);
+
+    },2000)
+
+});
+   const getbiodata =()=>
+   {
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        let biodata ={
+            name:"sumit",
+            address:"bhopal",
+            age:24
+            
+        }
+        resolve(`my name is ${biodata.name}.my address is ${biodata.address}. and my age is ${biodata.age}.`);
+
+        },2000);
+    })
+   } 
+
+   console.log(getbiodata());
+
+   */
+
+   /*mypromise.then((solve)=>{
+    console.log(solve);
+    getbiodata().then((value)=>{
+        console.log(value);
+    });
+   }).catch((error)=>{
+    console.log(error);
+   });*/
+
+  /* async function getdata()
+   {
+     const rollnodata = await mypromise;
+     console.log(rollnodata);
+
+
+     const mydata  = await getbiodata(rollnodata);
+     console.log(mydata);
+   }
+   getdata();
+   */
+  
+
+
+
+   // 2. example
+/*
+   async function mymessage(){
+    const mypromise = new Promise( (resolve,reject)=>{
+        resolve("how are you");
+    });
+    console.log(await mypromise);
+   }
+   mymessage();
+
+
+
+
+
+   const data = () =>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            const cheese = "🧀";
+            console.log("here is the cheese",cheese);
+            resolve(cheese);
+        },3000)
+    })
+   }
+console.log(data());*/
+
+
+
+
+
+// best example od async await promise
+
+
+const getpizza = () =>
+{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            const pizza = "🍕";
+            console.log("here is your pizza",pizza);
+            resolve(pizza);
+        },4000);
+
+    })
+}
+//console.log(getpizza());
+
+async function order()
+{
+    let pizza = await getpizza();
+    console.log(pizza);
+}
+order();
+
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array destructuring in javascript</title>
+</head>
+<body>
+    <h1>Array destructuring</h1>
+</body>
+<script>
+    // array destructuring - array destructuring ek javascript ka expression hai jisme hum array ki values
+    // ko unpack kar sakte sath hi sath object ki properties ko or usee store kar sakte hai dictinct variable me
+
+
+    const students = ["sumit","monu","shree","faroq","shivi","sohan","eleena"];
+
+
+    let [stu1,stu2,stu3,stu4,stu5,stu6,stu7]  = students;
+
+    console.log(`these are first year students ${stu1} and ${stu4}.`);
+
+    //console.log(students.length); 
+
+
+
+
+
+
+    // object destructuting
+
+    const biodata = {
+        name:"Suneel",
+        address:"Bhopal",
+        age:23,
+        college:"LNCT"
+
+    }
+
+    let {name,college} = biodata;
+
+    console.log(`my name is ${name}. and my college is ${college}.`);
+
+
+
+const arr = [1,4,6,9];
+
+const total = arr.reduce((accumelator,currentval)=>{
+    
+    return accumelator + currentval
+},0);
+console.log(total);
+
+
+const shoppingCart = [
+    {
+        ItemName:"Java",
+        price:2999,
+    },
+
+    {
+        ItemName:"JavaScript",
+        price:3999,
+    },
+
+    {
+        ItemName:"Python",
+        price:999,
+    },
+
+    {
+        ItemName:"C++",
+        price:2999,
+    },
+]
+
+const totalprice = shoppingCart.reduce((acc,item)=>
+{
+    return acc+item.price;
+},0);
+
+console.log(totalprice);
+
+
+const arrayy = [2,3,4,5];
+
+const totall  = arrayy.reduce((pre,cuv)=>{
+    return  pre+cuv;
+
+},0)
+console.log(totall);
+
+
+const data = [{
+    name:"hii",
+    id:12,
+    college:"lnct"
+}]
+
+const newdata = data.map((item,index)=>
+{
+    return item.name;
+    
+})
+console.log(newdata);
+
+
+const fun1 = ()=>
+{
+    console.log("hii")
+}
+
+const fun2 =(callback) =>
+{
+    console.log("hoe raesr");
+    callback();
+}
+fun2(fun1);
+
+</script>
+</html>

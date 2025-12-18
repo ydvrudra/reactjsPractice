@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <h1 style = "color: blue;text-align: center;">This s javaScript Hoisting</h1>
+</body>
+<script>
+
+    // 1. example 
+
+sum(10,20);
+function sum(a,b)
+{
+    c = a+b;
+    console.log("the sum of two no",c);
+} 
+
+
+
+// 2. example 
+
+sum(2,3); // function expression par hoisting work nahi karta
+console.log(sum) // undefined 
+var sum = function(a,b)
+{
+    c = a+b;
+    console.log(c);
+
+}
+sum(2,3);
+
+
+
+
+// 3. example 
+
+//var x; // declare x
+//x  = 6; // assign 6 to x
+
+//console.log(x);
+
+
+// 4. example 
+
+
+const indexofmt = ["mohan","sonali","sachin","yash","rohan","naman",'aman','yogesh'];
+
+console.log(indexofmt.indexOf("yash",5));
+
+
+  
+</script>
+</html>

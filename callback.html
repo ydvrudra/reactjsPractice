@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+    <h1>callback Function</h1>
+</body>
+<script>
+   
+
+
+    //callback function- A callback function passed as an arguments to another function.
+    // jab pahla function complete ho jaega tabhi dusra function call hoga
+    // call function me hum ek condition(setTimeout) dete hai ki jab tak ye part complete nahi hoga tab tak dusre function 
+    // ko call nahi karna hai
+
+    // normal function ko jab hum call karte hai tab jo uski output hai wo hume dikai deti hai
+
+    const person1 =(friend,callfriend) =>{
+      
+         console.log(`i am busy right now i am talking to ${friend}. i will call you latter`);
+         callfriend();
+    }
+    const person2 =() =>{
+        
+        console.log(`Hey what's up. i call you back dekha.`);
+
+    }
+    person1("rudra",person2);
+
+
+    //.......................................................................................
+
+
+    // 2. callback example 2;
+
+    const sayhello =() =>
+    {
+        console.log("how are you");
+    }
+
+    const name =() =>
+    {
+        console.log("Amit");
+    }
+    const sum =(a,b,callback) =>
+    {
+        console.log(`the sum of two no is ${a+b}.`);
+        callback();
+    }
+      sum(10,20,sayhello);
+
+
+      //....................................................................................................
+
+
+      // 3. callback example 3;
+
+      function Car()
+      {
+        console.log("this is my new car");
+      }
+      function company (callback)
+      {
+       console.log("Toyota");
+       callback();
+      }
+      company(Car);
+
+
+    
+
+      const fun1 = ()=>
+      {
+        console.log("how are you")
+      }
+
+      const fun2 = (callback) =>
+      {
+        console.log("amit");
+        callback();
+
+      }
+      fun2(fun1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // callback hell - means ek callback ke under dusra callback phir teesra callback yani ki nested callback
+
+    // task - 1.  2s student roll no;
+          //  2.  2s student name and age;
+    const getRollNo =() =>{
+        setTimeout( () =>{
+            console.log("getting a roll no");
+            let roll_no =[1,2,3,4,5];
+            console.log(roll_no);
+            setTimeout( (rollno) =>{
+             const biodata={
+                name:"vinod",
+                Age:"23"
+                
+             }
+            
+             console.log(` my roll no is ${rollno}. my name is ${biodata.name}. and my age is ${biodata.Age}.`);
+
+        
+            },2000,roll_no[1]);
+        },3000 );
+        
+    }
+    getRollNo();
+
+</script>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <h1 style="color: blue;text-align: center;">This is an promise</h1>
+</body>
+<script>
+    // promise = promise ek object hai jo yah track karta rahta hai ki Aap jo bhi operation perform kar rhe
+    // hai wah fullfilled hua ya reject ho gya ya pending me hai.
+
+
+    // stages
+    // 1. pending
+    // 2. resolve -> fullfilled
+    // 3. reject
+
+
+
+
+
+
+
+    // promise syntax
+
+
+    // producing code
+   /* const mypromise = new Promise ((resolve,reject) =>{
+
+        resolve(); // when successful
+        reject(); // when error
+
+    });
+  
+    //consuming code
+
+   mypromise.then((argument)=>{
+    console.log(argument);
+   }).catch((error)=>{
+    console.log(error);
+   })  */
+
+
+
+
+    // 1 . example promise task -student api -1: 2s roll no
+    //                                        2. 2s name and age
+
+     // promise produce
+    const pms = new Promise ( (resolve,reject) =>{
+        
+        setTimeout( () =>{
+            let roll_no = [1,2,3,4,5];
+            resolve(roll_no);
+           // reject("while! communicationg error");
+
+        }, 2000);
+    });
+
+        const getbiodata =() =>{
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                let biodata ={
+                    name:"vinod",
+                    age:23
+
+                }
+                resolve(`my name is ${biodata.name}. my age is ${biodata.age}.`);
+
+            },2000)
+
+            });
+        }
+
+
+    //promise consume
+    /*pms.then((roll_no)=>{
+        console.log(roll_no);
+        getbiodata().then((anything)=>{
+            console.log(anything);
+        });
+    }).catch ( (error)=>{
+        console.log(error);
+
+    });*/
+    async function getdata()
+       {
+        let rollnodata = await pms;
+        console.log(rollnodata);
+       }
+       getdata();
+
+
+
+
+
+    // 2. example
+
+
+const Mypromise = new Promise((resolve,reject)=>{
+
+let x =0;
+
+if(x==0)
+{
+   resolve("ok");
+
+}
+else
+{
+    reject("error");
+}
+
+
+});
+Mypromise.then((value)=>{
+console.log(value);
+}).catch((error)=>{
+    console.log(error);
+
+}); 
+
+
+
+
+// 3. example 
+
+const message = new Promise ((resolve,reject)=>{
+
+    setTimeout(()=>{
+        resolve("i love You");
+
+    }, 3000);
+
+});
+message.then((value)=>{
+console.log(value);
+
+}); 
+
+
+
+const ticket  = new Promise((resolve,reject)=>{
+    
+    const isFlight = false;
+
+    if(isFlight)
+    {
+
+        resolve("you are not in the flight");
+    }
+    else
+    {
+        setTimeout(() => {
+            reject("your flight has been cancelled");
+
+        }, 2000);
+        
+    }
+});
+ticket.then((val)=>{
+    console.log("wohoo" ,val);
+});
+ticket.catch((val)=>{
+    console.log("oh no",val);
+});
+
+
+
+
+    
+</script>
+</html>

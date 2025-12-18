@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes</title>
+</head>
+<body>
+    <h1> this is class</h1>
+    <p id = "demo"></p>
+</body>
+<script>
+
+// class defination :- A class is a user defined blueprint or prototype from which objects are create,
+                    // it represents the set of properties or methods.
+                   // jitni bhi class ki properties hai hum unhe constructor method ke under assign karte hai
+
+
+
+/* class syntax
+     class classname {
+        constructor(parameters)
+        {
+            //class properties access through this keyword
+        }
+     }
+
+     //object create and agruments pass
+     //class call    */
+
+
+
+
+
+     // 1.create a class
+
+
+
+     /* class college {
+        constructor(name,address,Established){
+        this.mycollege = name;
+        this.clgaddress = address;
+        this.clgEstablished = Established;
+
+     }
+    }
+    let obj1 = new college("Lnct college","Bhopal",1996);
+    let obj2 = new college("Oriental","Bhopal",1994);
+    console.log(obj1.mycollege,obj1.clgaddress,obj1.clgEstablished); */
+
+
+
+
+
+    // 2.  Create a Class method named "age", that returns the Car age:
+     
+     
+ /* class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  age() {
+    return this.name+" "+this.year;
+  }
+}
+
+const myCar = new Car("Ford", 20);
+console.log("My car is " + myCar.age() + " years old."); */
+
+
+
+// 3. child class inherit from parent class
+
+
+class employee{
+    constructor(name,age,address)
+    {
+        this.name = name;
+        this.age = age;
+        this.address= address;
+    }
+    //instance method
+    biodata()
+    {
+        return `hii my name is  ${this.name} . i am ${this.age} years old  . my address is ${this.address}`;
+    }
+}
+   class player extends employee {
+    constructor(name,age,address,game){
+        super(name,age,address);
+        this.game = game;
+    }
+      player_biodata()
+    {
+        return`${super.biodata()}. i am player of ${this.game}.`;
+    }
+
+
+   }
+
+    
+
+let obj1 = new player("vipin",21,"bhopal","cricket");
+let obj2 = new player("sohan",21,"Indore","Fooball");
+console.log(obj1.player_biodata(),obj2.player_biodata());
+
+
+
+</script>
+</html>

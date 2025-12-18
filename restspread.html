@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>rest parameter and spread operator</h1>
+</body>
+<script>
+// rest parameter mostly used in variable array or yah hum array return karta hai
+// spread parameter ka kam array ko spread karna 
+// rest parameter ka use jab hum function ko declare karte time karte hai or spread ka use function calling time 
+// use karte hai
+
+// rest -["rudra","amit","mohan"]
+// spread - rudra,amit,mohan
+
+               //(...a)
+function fruits(b,...p)
+{
+    console.log("fruits",p);
+}
+
+
+fruits("mango","banana","orange","kiwi","papaya","Apple");
+
+
+
+// example 2
+
+
+
+function sum(...anything)
+{
+    console.log(...anything);
+
+    let total = 0;
+    for(let i of anything)
+    {
+        total +=i;
+    }
+    console.log(total);
+}
+sum(1,2,3,4,5,6,7,8);
+
+
+
+
+// example 3
+
+function fun(a,b,...c)
+{
+    console.log(`${a} and ${b}`);
+    console.log(c);
+    console.log(c[0]);
+    console.log(c.length);
+    console.log(c.indexOf("mohan"));
+}
+fun("rohit","rohan","elina","mohan","eppa","shibh","shivi","sohan");
+
+
+
+// spread parameter 
+
+let name = ["seeta","reeta","geeta","sohan"];
+function stu(...a)
+{
+    console.log(a);
+}
+stu(...name);
+
+
+
+
+
+</script>
+</html>

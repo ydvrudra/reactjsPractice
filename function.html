@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <h1 style = "color: blue; text-align: center;">This is normal function</h1>
+    <p id ="demo" style="text-align: center; color: brown;",></p>
+</body>
+<script>
+
+//function defination:-  A javascript function is a block of code designed to perform a particular task
+
+    // 1. function in javascript
+
+
+/*function sum()
+    {
+        a = 10;
+        b = 20;
+        c = a+b;
+        console.log("sum of two no ",c);
+    }
+    sum();*/
+
+
+
+  
+  
+  
+    // 2.  function return parameters
+
+   /* function car(carname,model)
+    {
+       // return carname+ " "+model;
+        console.log(carname,model);
+    }
+     //console.log(car("Honda",2012));
+     car("Honda",2012);  */
+
+
+
+
+     // 3.  function Apply() method takes arguments as an array
+     // 4.  function call() method takes arguments saperately
+      
+     
+     /* const person = {
+                      name:"sohit",
+                      address:"Bhopal",
+                     college:function(collegename,branch)
+                {
+          console.log(`my name is ${this.name}. my address is ${this.address}.my collegename is ${collegename}
+         and my branch is ${branch}.`);
+    }
+}
+const person2 ={
+    name:"mohit",
+    address:"indore"
+
+}
+
+person.college.apply(person,["Lnct","MCA"]);
+//console.log(person.college.call(person1,"Lnct","bhopal")) */
+
+
+
+
+
+      // 5.function bind() method 
+     
+      
+    const person={
+        fname:"jeson",
+        lname:"funio",
+        display:function()
+        {
+         console.log(this.fname+" " + this.lname);
+        }
+    }
+    let display = person.display.bind(person);
+    setTimeout(display,5000);
+
+
+
+
+    // 6. Anonymous function = A function without a name that is anonymous function
+
+    let sum  = function(a,b) {
+       
+      console.log(a+b);
+    }
+    sum(2,4);
+    
+</script>
+</html>

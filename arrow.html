@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id  = "demo" style="text-align: center;"></h1>
+</body>
+<script>
+
+  // arrow function were introduced in ES6 version
+  // arrow function hamare function ko simple and short banata hai jisme hum ek hi line me parameters and
+  // arguments pass kar sakte hai
+  
+  
+// 1.Arrow function 
+
+   const sum =(a,b) => a+b;
+   console.log(sum(12,20));
+
+   const sum1 = (a,b) => a+b;
+   console.log(sum(10,20));
+
+   // 2. 
+
+   const student =(name,college) => name+" "+college;
+   console.log(student("anmol","Lnct"));
+
+
+   // 3. normal function using this keyword
+   // jab hum normal function ke under call karte hai to wah khud ke this ko call karta  hai
+   // jab hum arrow function ke under call karte hai to wah parent(window) ko call refer karta hai 
+   // arrow function ka khud ka this nahi hota  
+
+
+   const person ={
+    name:"beuno",
+    address:"itly",
+    country:function()
+    {
+        console.log("normal function",this);
+    },
+     getNamearrow:()=>{
+        console.log("arrow function",this);
+     }
+
+   }
+   //person.country();
+   person.getNamearrow();
+
+
+
+</script>

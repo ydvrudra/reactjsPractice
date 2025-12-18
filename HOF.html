@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOF function</title>
+</head>
+<body>
+    <script>
+// HOF:- ek function dusre function ko as a perameter ya phir as a return kare that ia called HoF 
+
+        const test =()=>
+        {
+            return 2+3;
+        }
+        const test1 =()=>
+        {
+            let unknown = function()
+            {
+                return 'hello';
+            }
+            return unknown;
+        }
+        test(test1);
+    </script>
+</body>
+</html>

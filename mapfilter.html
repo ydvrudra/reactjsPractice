@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /* 1.  map() method creates a new array by existing an array
+       2.  map() methed me hum array elements ko change kar sakte hai
+
+       filter() method ka use multiple arrays se data ko filter karne ke liye kiya jata hai */
+    
+    
+
+// 1. map() example 
+   
+  /*  
+const oldarr = ["manoj","vinod","sanoj","banoj","panoj"];
+
+//console.log(oldarr[0]);
+//console.log(oldarr[1]);
+//console.log(oldarr[2]);
+//console.log(oldarr[3]);
+//console.log(oldarr[4]);
+
+
+oldarr.map(function(myarr,i,arr){
+  
+console.log(arr);
+});
+console.log(newarr);
+
+*/
+
+
+// 2. map() method example 
+
+
+const studata  = [
+    {id: 1, name:"bipin",address:"bhopal"},
+    {id: 2, name:"manoj",address:"indore"},
+    {id: 3,name:"sooraj",address:"Pune"},
+];
+
+{studata.map((mydata) =>{
+  
+    return `my name is ${mydata.name} . and my address is ${mydata.address}.`;
+})
+};
+
+//console.log(arrdata);
+
+
+/*
+
+// 3. map() example  doubling each number
+
+
+
+const numbers = [4,2,3,7,9,6,12,21,23,14];
+
+
+
+let doubledata = numbers.map((curvalue)=>curvalue*2);
+
+console.log(` the numbers is double ${doubledata}.`);
+
+// 4. map() converting number to string
+
+
+const arrayno = [8,5,34,12,3,9,21,36];
+
+let convertstring = arrayno.map((curarray) => curarray.toString());
+
+console.log(convertstring);
+
+
+
+
+
+
+
+
+// 1. example filter() method find even numbers 
+
+const evennumber  = [32,43,56,12,2,32,23,67,87,98,12,56,38,93];
+
+let number = evennumber.filter((curno)=> curno % 2 ==0 );
+
+console.log(`even no is ${number}.`);
+
+
+// 2. example filter() numbers greater than 30
+
+
+const greaterno = [43,33,23,13,34,54,75,24,75,12,31,67];
+
+
+let newnumber = greaterno.filter((gtno)=> gtno>30);
+
+console.log(`these numbers are greater than 30 ${newnumber}.`);
+
+*/
+
+</script>
+</html>
