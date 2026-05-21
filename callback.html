@@ -12,10 +12,10 @@
    
 
 
-    //callback function- A callback function passed as an arguments to another function.
-    // jab pahla function complete ho jaega tabhi dusra function call hoga
-    // call function me hum ek condition(setTimeout) dete hai ki jab tak ye part complete nahi hoga tab tak dusre function 
-    // ko call nahi karna hai
+    /*callback function- A callback function passed as an arguments to another function.
+     jab pahla function complete ho jaega tabhi dusra function call hoga
+     call function me hum ek condition(setTimeout) dete hai ki jab tak ye part complete nahi hoga 
+     tab tak dusre function ko call nahi karna hai*/
 
     // normal function ko jab hum call karte hai tab jo uski output hai wo hume dikai deti hai
 
@@ -30,6 +30,17 @@
 
     }
     person1("rudra",person2);
+
+    const chaibanrahihai = () => {
+        console.log("mai chai banarha hu");
+    }
+    chaibanrahihai()
+
+    const padhaikarrhahu = () => {
+        console.log("mai padhai kar raha hu");
+    }
+    padhaikarrhahu();
+
 
 
     //.......................................................................................
@@ -71,34 +82,27 @@
       company(Car);
 
 
-    
-
       const fun1 = ()=>
       {
-        console.log("how are you")
+        console.log("waiter meri ek chai bna do");
+        
       }
 
-      const fun2 = (callback) =>
+      const fun2 = () =>
       {
-        console.log("amit");
-        callback();
+        console.log("chai ban rhi hai...");
 
       }
-      fun2(fun1);
+      fun2(fun1());
 
+      fun3 = (callback) => {
+        setTimeout(() => {
+            console.log("sir Apki chai ready hai ");
+            callback()
+        }, 2000);
+      }
 
-
-
-
-
-
-
-
-
-
-
-
-
+      fun3(fun2);
 
 
 
@@ -128,6 +132,8 @@
         
     }
     getRollNo();
+
+
 
 </script>
 </html>

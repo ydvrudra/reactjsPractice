@@ -12,75 +12,88 @@
 <script>
 
 
-// var -  function scope/global scope
-//let & const - block scope
+// var let const me diff 
 
 
-/* var name = "sizuka";
-    name = "shree";
-    console.log(name);
+// 1. var - var me hum same name ke variable me value assign kar sakte hai 
 
+var car = "sizuka";
+var car = "honda";
+ console.log(car);
 
+ /* 2. var -  function scope/global scope isme hum block/function ke bahar ki value 
+ block/function ke under or block/function ke under ki value block/function ke bahar acces kar 
+sakte hai (i means globally access)
+  */
 
-let Name = "bahadur";
-   Name  =  " thapa";
-   console.log(Name);
+// exp 1
 
-
-
-const college = "Lnct";
-     college = "excellence";
-   console.log(college); */
-
-
-
-// var - function scope/local scope/global scope- ise hum block ke under ya bahar console kar sakte hai
-
-function biodata(person)
+var laptop = "dell";
 {
-   if(person)
-    {
-      var name = "sohan";
-      var address = "bhopal";
-      console.log(`my name is ${name} my address is ${address}.`); 
-    }
-
-    //console.log(`my name is ${name} my address is ${address}.`); 
+ console.log(laptop);
 }
 
- biodata(true);
+//exp 2
+
+{
+var mobile = "iphone"
+}
+console.log(mobile);
+
+//exp 3 
+
+var name = 'rudra'
+var college = 'lnct'
+const funbio = () => {
+    var college = 'lnct'
+    console.log(`name is ${name} and college is ${college}`);
+}
+ console.log(`college is ${college}`);
+funbio();
+
+
+ 
+/* 2. let :- let me hum same name ke variable me value to assign kar sakte hai
+ but redeclare nahi kar sakte varible ko second time */
+
+ /* let & const - block/function scope means block/function ke bahar ki value block/function ke 
+ under access kar sakte hai but block/function ke under ki value block ke bahar access nahi kar sakte */
+
+
+ // exp 1
+ let Name1 = "bahadur";
+  Name1  =  " thapa";
+    console.log(Name1);
+
+
+// exp 2 same const me 
+let user = 'admin'
+{
+    console.log(user)
+}
+
+{
+let admin = "rudra"
+}
+//console.log(admin); // reference error admin is not define
+
+
+const fun1 = () => {
+    let fruit = "mango" 
+    const vegitable = "potato"
+}
+console.log(fruit);
+console.log(vegitable);
+fun1();
 
 
 
+/*3. const :- const means constant value isme ek variable jo value assign kar di to 
+phir same name ke variable ko na to second time declare kar sakte na value assign kar sakte */
 
- // let & const -block scope
-
- {
-    let name = "sohil";
-    const gender ="male";
-
-    console.log(name+" "+gender); // block scope
- }
-    //console.log(name+ " ",gender);   // Error
-
-
-
-    var stu = "jinip";
-    {
-        var stu = "amola";
-        console.log(stu);
-    }
-    console.log(stu);
-
-
-
-    let name = "suneel";
-    {
-        let name = "sumit";
-        console.log(name);
-    }
-    console.log(name);
-                                                                           
-
+const company = "tcs"
+const address = 'mumbai'
+console.log(`company is ${company} and address is ${address}`)
+                                                                
 </script>
 </html>

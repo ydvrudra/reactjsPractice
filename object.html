@@ -10,64 +10,592 @@
    <p id ="demo"></p> 
    <script>
     
+/*______________________________________________________________________________ */
 
     // 1. create a object
      
 
-     const person ={
-        name:"amit",
-        gender:"male",
-        address:"panna"
+   //   const person ={
+   //      name:"amit",
+   //      gender:"male",
+   //      address:"panna"
 
-     }
-     console.log(" my name is " +person.name+" my gender " +person.gender+ "my address is " +person.address);
+   //   }
+   //   console.log(" my name is " +person.name+" my gender " +person.gender+ "my address is " +person.address);
+    
 
 
-
+/*______________________________________________________________________________ */
 
      // 2. adding new property in object
-     // 3.deleting a property
+
+   //   const Car ={
+   //      name:"bmw",
+   //      company:"xuv"
+   //   }
+   //   Car.modelyear = 2012;
+   //   console.log(Car.name+" "+Car.company+" "+Car.modelyear);
 
 
-     const Car ={
-        name:"bmw",
-        company:"xuv"
-     }
-     Car.modelyear = 2012;
-     console.log(Car.name+" "+Car.company+" "+Car.modelyear);
+/*______________________________________________________________________________ */
 
+     // 3 create Nested object
 
-
-
-
-     // 4. create Nested object
-
-
-     const mobile ={
+   //   const mobile ={
                     
-             name:"Redmi Note 5 pro",
-             Ram:"4GB",
-             Rom:"5G",
-             Laptops:{
-                name1:"Asus",
-                name2:"intel",
-                name3:"HP"
-             }        
+   //           name:"Redmi Note 5 pro",
+   //           Ram:"4GB",
+   //           Rom:"5G",
+   //           Laptops:{
+   //              name1:"Asus",
+   //              name2:"intel",
+   //              name3:"HP"
+   //           }        
 
-     }
-     console.log(mobile.Laptops.name);
-
-
-     const student = {
-      name:"amit",
-      age:21,
-      college:"ln",
-      address:"bhopal"
-     }
-     console.log(`my name is ${person.name} and college is ${student.college}`)
+   //   }
+   //   console.log(mobile.Laptops.name);
 
 
+/*______________________________________________________________________________ */
 
+     // 4. delete property
+
+   //   const user = {
+   //    name:'amit',
+   //    age:36
+   //   }
+   //   delete user.name
+
+   //   console.log(user);
+
+
+   //   const user1 = {
+   //    name:'peradox',
+   //    age:44
+   //   }
+
+     //console.log(Object.keys(user1))
+     //console.log(Object.values(user1));
+
+/*______________________________________________________________________________ */
+
+     // 5. merge object with Override same key
+
+   //   const Obj1 = {
+   //    name:'Bipin',
+   //    college:'Lnct',
+   //    age:23
+   //   }
+
+   //   const Obj2 = {
+   //    name:'manoj',
+   //    college:'BGi'
+   //   }
+
+   //   const result = {...Obj1, ...Obj2 }
+
+   //   console.log(result)
+
+
+
+   /*______________________________________________________________________________ */
+
+     // 6.  Find user by id
+
+   //   const users = [
+   //    {id:1, name:'sumit'},
+   //    {id:2, name:'deep'},
+   //    {id:3, name:'komu'}
+   //   ];
+
+   //   const output = users.find(user => user.id === 2)
+
+   //   console.log(output);
+
+   /*______________________________________________________________________________ */
+
+   // 7. Filter users age > 18 
+
+   // const users = [
+   //    {id:1, name:'sumit', age:23},
+   //    {id:2, name:'deep', age:19},
+   //    {id:3, name:'komu', age:21},
+   //    {id:4, name:'kunal', age:14},
+   //    {id:5, name:'sonu', age:11},
+   //    {id:6, name:'leela', age:41}
+   // ]
+
+   // const result = users.filter(user => user.age > 18)
+
+   // console.log(result);
+
+
+   /*______________________________________________________________________________ */
+
+   // 8. Add key in every object
+
+
+   // const users = [
+   //    {name:'nihal'},
+   //    {name:'naman'}
+   // ]
+
+   // const result = users.map(user => ({
+   //    ...user, country:'india', age:21
+   // }));
+
+   // console.log(result)
+
+
+   /*______________________________________________________________________________ */
+   
+   // 9. Object to array
+
+   // const user = {
+   //    name:'ritesh',
+   //    age:34
+   // }
+
+   // console.log(Object.entries(user));
+
+
+   /*______________________________________________________________________________ */
+
+   //10. array to Object
+
+   // const user = [
+   //    ["name",'elia'],
+   //    ["age",44]
+   // ]
+
+   // console.log(Object.fromEntries(user))
+
+/*______________________________________________________________________________ */
+   // 11. Dynamic key
+
+   //  const key = "name";
+
+   //    const user = {
+   //    [key] : "Rudra"
+   //    };
+
+   //    console.log(user);
+
+
+/*______________________________________________________________________________ */
+
+// 12. Merge users by id
+
+   // const arr1 = [
+   //    {id:1, name:'khatri'},
+   //    {id:2, name:'kunal'},
+   //    {id:3, name:'kanchal'}
+   // ]
+
+   // const arr2 = [
+   //    {id:1, age:23},
+   //    {id:2, age:44}
+   // ]
+
+   // const result = arr1.map(user => {
+   //    const match = arr2.find(item => item.id === user.id);
+
+   //    return {...user, ...match }
+   // })
+
+   // console.log(result)
+
+
+
+/*______________________________________________________________________________ */
+
+   // 13 . Add property in specific id
+
+   // const users = [
+   //    {id:1, name:'gonu'},
+   //    {id:2, name:'yogu'}
+   // ]
+
+   // const result = users.map(user => {
+   //    if(user.id == 2) {
+   //       return {
+   //          ...user, 
+   //          city:'mumbai',
+   //          company:'HL bhopal' 
+   //       };
+   //    }
+   //    return user
+   // })
+
+   // console.log(result)
+
+
+
+   /*______________________________________________________________________________ */
+
+
+   // 14. Replace specific object value
+
+   // const users = [
+   //    {id:1, name:'jemu'},
+   //    {id:2, name:'rupesh'}
+   // ]
+
+   // const result = users.map(user => {
+   //    if(user.id === 1){
+   //       return { ...user, name:'hans', age:34, college:"SGA"}
+   //    }
+   //    return user;
+   // })
+
+   // console.log(result)
+
+   /*______________________________________________________________________________ */
+
+   // 15. Merge two arrays without duplicate id
+
+//  const arr1 = [
+//   {id:1, name:"Rudra"},
+//   {id:2, name:"Ram"}
+// ];
+
+// const arr2 = [
+//   {id:2, name:"mm"},
+//   {id:3, name:"Shyam"}
+// ];
+
+// const result = [...arr1]
+
+// arr2.forEach(item => {
+//    const match = result.find(user => user.id === item.id)
+   
+//    if(!match){
+//       result.push(item)
+//    }
+// })
+
+// console.log(result);
+
+/*______________________________________________________________________________ */
+
+// 16. Update nested object value
+
+// const user = {
+//    id:2,
+//    email:'nihal@gmail.com',
+//    pass:'nihal123',
+//    profile:{
+//       college:'Lnct',
+//       name:'nihaal',
+//       age:34,
+//    }
+// }
+
+// const updatedUser = {
+//    ...user, pass:'nihal@12345',
+//    profile:{
+//       ...user.profile, age:36
+//    }
+// }
+
+// console.log(updatedUser)
+
+/*______________________________________________________________________________ */
+
+// 17. Add object in specific index 
+
+// const users = [
+//    {id:1, name:"Rudra"},
+//    {id:2, name:"Ram"},
+//    {id:3, name:'manoj'}
+// ]
+
+// users.splice(1,1, {
+//    id:4,
+//    name:'bipin'
+// })
+
+// console.log(users);
+
+
+/*______________________________________________________________________________ */
+
+// 18. Remove object by id
+
+
+// const users = [
+//    {id:1, name:"Rudra"},
+//    {id:2, name:"Ram"},
+//    {id:3, name:'manoj'}
+// ]
+
+// const updatedUser = users.filter(user => user.id !== 1)
+
+// console.log(updatedUser)
+
+/*______________________________________________________________________________ */
+
+
+// 19. Add key dynamically
+
+// const key = 'salary'
+
+// const user = {
+//    id:3,
+//    name:'honey'
+// }
+
+// const result = {
+//    ...user,
+//    [key]:4000
+// }
+
+// console.log(result);
+
+
+/*______________________________________________________________________________ */
+
+// 20 Merge object inside object and change object values
+
+// const users = {
+//    id:1,
+//    name:'riyan',
+//    address:{
+//       city:'bhopal', college:'Lnct', age:23
+//    }
+// }
+
+// const extraObj = {
+//    pinCode:46004,
+//    district:'panna'
+// }
+
+// const result = {
+//    ...users,
+//    address:{
+//       ...users.address, city:'indore',
+//       ...extraObj, district:'satna'
+
+//    }
+// }
+
+// console.log(result)
+
+/*______________________________________________________________________________ */
+
+
+// 21.  Find highest salary object
+
+
+// const users = [
+//  {name:"A", salary:20000},
+//  {name:"B", salary:50000},
+//  {name:"C", salary:30000}
+// ];
+
+// const result = users.reduce((max,curr) => {
+
+//    return curr.salary > max.salary ? curr : max;
+
+// });
+
+// console.log(result);
+
+
+/*______________________________________________________________________________ */
+
+
+// 22. Update salary by employee id same as 14 question
+
+
+// const employees = [
+//  {id:1, name:"Rudra", salary:20000},
+//  {id:2, name:"Ram", salary:30000}
+// ];
+
+// const result = employees.map(emp => {
+//    if(emp.id ===1) {
+//       return { ...emp, salary:4000}
+//    }
+//    return emp;
+// })
+
+// console.log(result)
+
+
+/*______________________________________________________________________________ */
+
+
+// 23.  Add item in nested array
+
+
+// const user = {
+//    id:1,
+//    name:'manish',
+//    hobbies:['cricket', 'coding', 'gamming']
+// }
+
+// const result = {
+//    ...user,
+//    hobbies:[...user.hobbies, 'swimming']
+// }
+
+// console.log(result)
+
+
+/*______________________________________________________________________________ */
+
+
+// 24.  Merge object data into existing array object
+
+// const users = [
+//    {id:1, name:'yonika'},
+//    {id:2, name:'geeta'}
+// ]
+
+// const extraObj = {
+//    id:2,
+//    city:'panna',
+//    age:32
+// }
+
+// const result = users.map(user => {
+//    if(user.id === extraObj.id) {
+//       return {...user, ...extraObj}
+//    }
+//    return user
+// });
+
+// console.log(result);
+
+
+
+/*______________________________________________________________________________ */
+
+
+// 25.  Sort objects by salary
+
+// const employees = [
+//  {name:"A", salary:50000},
+//  {name:"B", salary:20000},
+//  {name:"C", salary:30000}
+// ];
+
+// const result = employees.sort((a,b) => a.salary - b.salary)
+
+// console.log(result)
+
+/*______________________________________________________________________________ */
+
+
+// 26.  Extract only names from objects
+
+// const users = [
+//    {id:1, name:'kartik'},
+//    {id:2, name:'seeta', age:32, college:'sage'}
+// ]
+
+// const updatedUser = users.map(user => user.name)
+
+// console.log(updatedUser)
+
+
+
+/*______________________________________________________________________________ */
+
+
+// 27.  Add serial number dynamically
+
+// const users = [
+//  {name:"A"},
+//  {name:"B"},
+//  {name:"C"}
+// ];
+
+// const result = users.map((user,index) => ({
+//    srNo:index + 1,
+//    ...user
+// }));
+
+// console.log(result);
+
+
+
+/*______________________________________________________________________________ */
+
+
+// 28.  Remove duplicate objects by id
+
+// const users = [
+//  {id:1, name:"A"},
+//  {id:2, name:"B"},
+//  {id:1, name:"C"}
+// ]
+
+// const unique = []
+
+// users.forEach(user => {
+//    const match = unique.find(item => item.id === user.id)
+   
+//    if(!match){
+//       unique.push(user)
+//    }
+
+// })
+
+// console.log(unique)
+
+
+/*______________________________________________________________________________ */
+
+
+// 29.  Sum all salaries
+
+// const employees = [
+//  {name:"A", salary:10000},
+//  {name:"B", salary:20000},
+//  {name:"C", salary:30000}
+// ];
+
+// const result = employees.reduce((acc,curr) => {
+//    return acc + curr.salary
+// }, 0)
+
+// console.log(result)
+
+/*______________________________________________________________________________ */
+
+// 30. Add object if id not exists
+
+
+// const users = [
+//  {id:1, name:"A"},
+//  {id:2, name:"B"}
+// ];
+
+// const newUser = {
+//    id:3,
+//    name:"C"
+// };
+
+// const exist = users.find(user => user.id === newUser.id)
+
+// if(!exist){
+//    users.push(newUser)
+// }
+
+// console.log(users)
+
+/*______________________________________________________________________________ */
+
+// 31. 
+
+
+
+
+/*______________________________________________________________________________ */
+
+// 32.
 
    </script>
 </body>

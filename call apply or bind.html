@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* call() method ka use ek hi function ko diff diff objects ke sath use karne ke  kiya jata hai.
+         call() methed takes arguments saperately - any type of arguments*/
+
+        const student = {
+            firstname: "shree",
+            lastname: "singh",
+            age: 21,
+        };        
+
+        const teacher = {
+            firstname: "amit",
+            lastname: "yadav",
+            age: 25,
+        };
+        function details(city,rollno){
+            return  `my name is ${this.firstname} ${this.lastname} . my age is ${this.age} . i live in ${city}`
+        }
+        let res1 = details.call(student, "indore", 101);
+        console.log(res1);
+        let res2 = details.call(teacher, "bhopal", 102);
+        console.log(res2);
+
+
+ /* apply() method bhi call() ki tarah hi hota hai bas isme arguments ko array ki form me pass karte hai.
+         apply() method takes arguments as an array  */
+
+         let res3 = details.apply(student, ["pune", 101]);
+         console.log(res3);
+         let res4 = details.apply(teacher, ["pune", "mumbai"]);
+         console.log(res4);
+
+
+
+ /* bind() method bhi call() ki tarah hi hota hai bas isme ye ek naya function return karta
+  hai jise hum variable me store kar sakte hai.
+ bind() method returns a new function */
+
+    let bindfun1 = details.bind(student, "indore", 101);
+    console.log(bindfun1());
+
+    let bindfun2 = details.bind(teacher, "bhopal", 102);
+    console.log(bindfun2());
+
+</script>
+</body>
+</html>

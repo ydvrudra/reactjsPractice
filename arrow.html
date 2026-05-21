@@ -11,11 +11,14 @@
 <script>
 
   // arrow function were introduced in ES6 version
-  // arrow function hamare function ko simple and short banata hai jisme hum ek hi line me parameters and
-  // arguments pass kar sakte hai
+  // arrow function hamare function ko simple and short banata hai jisme hum ek hi line 
+  // me parameters and arguments pass kar sakte hai
   
   
 // 1.Arrow function 
+
+
+
 
    const sum =(a,b) => a+b;
    console.log(sum(12,20));
@@ -23,33 +26,93 @@
    const sum1 = (a,b) => a+b;
    console.log(sum(10,20));
 
-   // 2. 
+//    // 2. 
 
    const student =(name,college) => name+" "+college;
    console.log(student("anmol","Lnct"));
 
 
    // 3. normal function using this keyword
-   // jab hum normal function ke under call karte hai to wah khud ke this ko call karta  hai
-   // jab hum arrow function ke under call karte hai to wah parent(window) ko call refer karta hai 
-   // arrow function ka khud ka this nahi hota  
+   /* jab hum normal function ke under call karte hai to wah khud ke this ko call karta  hai
+    jab hum arrow function ke under call karte hai to wah parent(window) ko call refer karta hai 
+    arrow function ka khud ka this nahi hota  
+
+    arrow function me this keyword ka use nahi kar sakte hai 
+
+    normal function me this keyword ka use kar sakte hai 
 
 
-   const person ={
-    name:"beuno",
-    address:"itly",
-    country:function()
-    {
-        console.log("normal function",this);
-    },
-     getNamearrow:()=>{
-        console.log("arrow function",this);
-     }
-
-   }
-   //person.country();
-   person.getNamearrow();
+    */
 
 
+  // normal function example - khud ka this banata hai
 
+
+  const obj = {
+    name:'rudra',
+    address:'Bhopal',
+    getdetails: function(){
+        setTimeout(function() {
+          console.log("normal function", this.name);  // undefiined
+        }, 1000);
+    }
+  };
+  obj.getdetails();
+
+
+    // arrow function example - Arrow function apna this nahi banata, parent se leta hai.
+
+    const obj2 = {
+        name: "amit",
+        address: "indore",
+        getdetails: function(){
+           const getdata = () => {
+                console.log("arrow function", this.name);  // amit
+            };
+            return getdata;
+        }
+    };
+    const res = obj2.getdetails()
+    res();
+
+/*  return keyword kab use karte hai jab hume ek function ko return karna (higher order function)
+*/
+
+// example 1 
+
+const func1 = () => {
+    return "hello world";
+}
+console.log(func1());
+
+// example 2
+
+const func2 = () => {
+    return () => {
+        console.log("hello rudra");
+    }
+}
+const ans = func2();
+ans();
+
+// example 3
+
+const func3 = () => {
+    const innerfunc = () => {
+        console.log("hello innerfunc");
+    }
+    return innerfunc;
+}
+const ans1 = func3();
+ans1();
+
+// example 4
+
+const func4 = () => {
+    const innerfunc1 = () => {
+        console.log("return func with call");
+    }
+    innerfunc1();
+}
+func4();
 </script>

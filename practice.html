@@ -13,21 +13,21 @@
 
 // function in javascript
 
-/*const biodata = [{
-     id:"304",
-     name:"suneel",
-     email:"",
-     college:"",
-     age:26,address:"bhopal",
-     roll_no:34523
+// const biodata = [{
+//      id:"304",
+//      name:"suneel",
+//      email:"",
+//      college:"",
+//      age:26,address:"bhopal",
+//      roll_no:34523
 
-    }];
+//     }];
 
-    {
-        biodata.filter((val,index)=>{
-        console.log(val.id);
-    })
-}*/
+//     {
+//         biodata.filter((val,index)=>{
+//         console.log(val.id);
+//     })
+// }
 
 
 // javascript interview question
@@ -48,25 +48,26 @@ fruits();
 
 // 2.
 
+//explaination
 
-/*for (var i=0;i<3;i++)
-{
-    setTimeout(()=>console.log(i),2000);
-} */
+//function scoped hota hai
+// ek hi variable memory me rehta hai
 
-
-
-
-
-// 3.
-
-// for(let i= 0; i<3;i++)
+// for (var i=0;i<3;i++)
 // {
 //     setTimeout(()=>console.log(i),2000);
 // } 
 
 
+// 3.
 
+//block scoped hota hai
+// har iteration me new variable banta hai
+
+// for(let i= 0; i<3;i++)
+// {
+//     setTimeout(()=>console.log(i),2000);
+// } 
 
 
 
@@ -80,7 +81,6 @@ console.log(!"amit");
 console.log(typeof("amit")); */
 
 
-
 // 5.
 
 
@@ -88,35 +88,32 @@ console.log(typeof("amit")); */
 
 const bird = {
     size:"small",
-
 }
-
-console.log(bird[data]);
+console.log(bird[data]);  //bird[data] -> bird["size"]
 console.log(bird["size"]);
 console.log(bird.size);
-console.log(bird.data); */
-
-
-
+console.log(bird.data);   */
 
 
 //6.
 
-/*let c = {name:"peter"};
+/*let c = 
+{
+    name:"ciyan"
+};
 
-let d;
+let d = c;
 
- d = c;
-
-
+    c = {
+    name:"kalu"
+};
  c.name = "peter";
+ console.log(c.name);
+ console.log(d.name); */
 
- console.log(d.name);
-*/
-
+ 
 
 // 7.
-
 
 /* var x;
 var x = 10;
@@ -124,22 +121,14 @@ console.log(x);  */
 
 
 
-
-
 // 8.
 
-
-let a = 6;
+/*let a = 6;
 
 let b = "6";
 
-
 console.log(a == b);
-console.log(a ===b); 
-
-
-
-
+console.log(a === b);  */
 
 // 9.
 
@@ -164,7 +153,6 @@ console.log(number++);
 console.log(++number);
 console.log(number);
 */
-
 
 
 
@@ -198,13 +186,7 @@ getAge();
 */
 
 
-
-
-
-
 // 13.
-
-
 /*
 const sum = eval("10*5+3");
 console.log(sum);
@@ -238,7 +220,7 @@ for(let i=0;i<5;i++)
 // 16
 
 
-/*
+/*\\
 const fun1 = (()=>console.log("first"));
 
 const fun2 = ()=> setTimeout(()=>console.log("second"));
@@ -255,16 +237,6 @@ fun3();
 
 // 17.
 
-
-/*
-const person ={name:"shree"};
-
-const sayhii = ((age)=>{
-    return `${this.name} is ${age}`;
-});
-console.log(sayhii.call(person,21));
-console.log(sayhii.bind(person,21));
-*/
 
 
 //18.
@@ -320,8 +292,8 @@ console.log(setInterval(()=>console.log('hii'),2000));
 // 22...
 
 
-/*
-console.log([..."amiy"]);
+
+/*console.log([..."amiy"]);
 console.log(..."amiy");
 console.log(...[1,3,5,9]);
 //console.log(...amiy);
@@ -333,8 +305,8 @@ console.log(typeof data);
 
 console.log(typeof 3+9+"5");
 console.log(typeof (3+9+ +"5"));
-console.log([] == []);
-*/
+console.log([] == []); */
+
 
 
 
@@ -438,7 +410,7 @@ let mn = 80;
 console.log("hel",p);
 
 // 26..
-/
+
 
 console.log("2"+1);
 console.log("2"-1);
@@ -450,7 +422,7 @@ console.log(3<2<1);
 console.log(1<2<3);
 console.log(false>1);
 console.log("2" +1);
-*/
+
 
 
 
@@ -472,12 +444,12 @@ setTimeout(() => {
     console.log(4);
 }, 0);
 console.log(5)
-*/
+
 
 
 
 // 27...
-/*
+
 
 var i = 1
 function test()
@@ -510,8 +482,8 @@ function sum()
 }
 sum();
 
-
 */
+
 
 // 28...
 
@@ -540,15 +512,15 @@ console.log(a); // undefined
 
 
 
-// var name = 23;
-// function hello()
-// {
-//     //var name = 12;
-//     console.log(name);
+/*function hello()
+{
+    const name = 12;
+    //console.log(name);
 
-// }
-// hello();
-//console.log(name);
+}
+hello();
+console.log(`name is ${name}`);
+*/
 
 
 
@@ -895,6 +867,7 @@ getdata();
 
 
 
+ /*
 const student = [{
     names:"sagar",
     address:"bhopal",
@@ -990,8 +963,7 @@ const books = ["physics","chemistry","math","hindi","english"];
 console.log(books.includes("hindi"));
 console.log(books.includes("english"));
 
-
-
+*/
 
 
    </script>
