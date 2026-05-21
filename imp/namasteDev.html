@@ -1,0 +1,2407 @@
+<!-- **\*\*Namastedev**
+
+**problem 1 find smallest Number in an array\*\***
+
+
+
+1. **approach 1-------**
+
+
+
+
+
+function findSmallest(arr) {
+
+  // non-array input
+
+  if (!Array.isArray(arr)) {
+
+    return false;
+
+  }
+
+
+
+  // empty array
+
+  if (arr.length === 0) {
+
+    return null;
+
+  }
+
+
+
+  let smallest = arr\[0];
+
+
+
+
+
+  for (let i = 0; i < arr.length; i++) {
+
+    if (typeof arr\[i] !== "number" || !Number.isFinite(arr\[i])) {
+
+      return false;
+
+    }
+
+
+
+    if (arr\[i] < smallest) {
+
+      smallest = arr\[i];
+
+    }
+
+  }
+
+
+
+  return smallest;
+
+}
+
+
+
+module.exports = { findSmallest };
+
+
+
+
+
+**approach 2-------**
+
+
+
+
+
+function findSmallest(arr) {
+
+
+
+  if (!Array.isArray(arr)) return false;
+
+  if (arr.length === 0) return null;
+
+
+
+  for (let i = 0; i < arr.length; i++){
+
+    if (typeof arr\[i] !== "number" || !Number.isFinite(arr\[i]))
+
+    {
+
+      return false;
+
+    }
+
+  }
+
+  return Math.min(...arr);
+
+
+
+}
+
+
+
+module.exports = { findSmallest };
+
+
+
+
+
+
+
+
+
+**approach 3----**
+
+
+
+
+
+function findSmallest(arr) {
+
+
+
+  if (!Array.isArray(arr)) return false;
+
+  if (arr.length === 0) return null;
+
+
+
+  if (!arr.every(num => typeof num === "number" \&\& Number.isFinite(num))) {
+
+    return false;
+
+  }
+
+  return Math.min(...arr);
+
+
+
+}
+
+
+
+module.exports = { findSmallest };
+
+Explanation 
+
+
+1. Math.min() kya expect karta hai?
+
+Math.min() multiple numbers leta hai, array nahi.
+
+Math.min(10, 5, 8)
+
+👉 Output:
+
+5
+
+
+...arr kya karta hai?
+
+...arr array ko spread (faila) deta hai — matlab array ke elements ko alag-alag values bana deta hai.
+
+let arr = [10, 5, 8];
+Math.min(...arr)
+
+👉 Internally yeh ban jata hai:
+
+Math.min(10, 5, 8)
+
+👉 Output:
+
+5
+
+Code	Kya hota hai
+Math.min(arr)	        ❌ Array pass ho raha hai (NaN)
+Math.min(...arr)	✅ Individual numbers pass ho rahe hain
+
+
+
+\-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem 2 count negative**
+
+
+
+function countNegatives(arr) {
+
+
+
+  // non-array
+
+  if (!Array.isArray(arr)) {
+
+    return false;
+
+  }
+
+
+
+  let count = 0;
+
+
+
+  for (let i = 0; i < arr.length; i++) {
+
+    if (typeof arr\[i] !== "number" || !Number.isFinite(arr\[i])) {
+
+      return false;
+
+    }
+
+
+
+    if (arr\[i] < 0) {
+
+      count++;
+
+    }
+
+
+
+    //  return arr.filter(num => num< 0).length;
+
+  }
+
+
+
+  return count;
+
+}
+
+
+
+module.exports = { countNegatives };
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+\*\*problem sum();
+
+approach 1 using loop ----\*\*
+
+ 
+
+const  args = \[2, 5,9,6,0];
+
+
+
+function sum(...args) {
+
+
+
+  // no arguments
+
+  if (args.length === 0) {
+
+    return 0;
+
+  }
+
+  let total = 0;
+
+  for (let i = 0; i< args.length; i++)
+
+  {
+
+      total += args\[i];
+
+  }
+
+ 
+
+  return total;
+
+}
+
+
+
+console.log(sum(...args))
+
+
+
+**approach 1 using reduce methed is very simple ----**
+
+function sum(...args) {
+
+
+
+    if (args.length === 0) return 0;
+
+
+
+    return args.reduce((acc, curr) => acc + curr, 0);
+
+
+
+}
+
+module.exports = sum
+
+
+
+\*\*\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**// problem Chips input --------\*\* in reactjs**
+
+
+
+import React, { useState } from 'react';
+
+import './styles.css'
+
+function ChipsInput() {
+
+
+
+  const \[chips, setChips] = useState(\[]);
+
+  const \[inputValues, setInputValues] = useState("");
+
+
+
+
+
+  const handleAddChips = (e) => {
+
+    if (e.key === "Enter" \&\& inputValues.trim() !== "") {
+
+      setChips(\[...chips, inputValues]);
+
+      setInputValues("");
+
+    }
+
+  }
+
+
+
+
+
+  const handleRemove = (indexRemove) => {
+
+    const newchip = chips.filter((\_, index) => index !== indexRemove);
+
+    setChips(newchip);
+
+ 
+
+}
+
+  return (
+
+    <div className='main-container'>
+
+      <h2 className="headtext">Chips Input</h2>
+
+ 
+
+      <input
+
+        type="text"
+
+        onChange={(e) => setInputValues(e.target.value)}
+
+        value={inputValues}
+
+        onKeyDown = {handleAddChips}
+
+        className='input'
+
+        placeholder="Type a chip and press tag"
+
+        className='input'
+
+      />
+
+      <div className='chips-container'>
+
+        {chips.map((chip, index) => (
+
+          <div key={index} className="chip">
+
+            {chip}
+
+            <span
+
+              onClick={() => handleRemove(index)}
+
+              className="remove-chip">X</span>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  );
+
+}
+
+
+
+export default ChipsInput;
+
+
+
+
+
+**// css ---**
+
+.main-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    color: black;
+
+    margin-top: 50px;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+.headtext {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.input {
+
+    margin-top: 10px;
+
+    padding: 8px;
+
+    width: 300px;
+
+    border: 1px solid gray;
+
+    border-radius: 4px;
+
+}
+
+
+
+.chips-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+
+    gap: 8px;
+
+}
+
+
+
+.chip {
+
+    background-color: #e0e0e0;
+
+    padding: 6px 12px;
+
+    color: black;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    font-size: 16px;
+
+}
+
+
+
+.remove-chip {
+
+    margin-left: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    color: red;
+
+}
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem- Even or odd- in reactjs**
+
+
+
+
+
+import React, { useState } from 'react';
+
+import "./styles.css";
+
+
+
+function EvenOrOdd() {
+
+  const \[inputValue, setInputValue] = useState("");
+
+  const \[result, setResult] = useState(null)
+
+  const \[loading, setLoading] = useState(false);
+
+
+
+  const handleChecker = () => {
+
+    const num = Number(inputValue);
+
+    setLoading(true);
+
+    setResult(null);
+
+
+
+    setTimeout(() => {
+
+      // Input validation
+
+      if (inputValue.trim() === "" || isNaN(num)) {
+
+        setResult("Please enter a valid number.");
+
+        setLoading(false);
+
+        return;
+
+      }
+
+
+
+      // Even or odd check
+
+      setResult(`The number ${num} is ${num % 2 === 0 ? "even" : "odd"}.`);
+
+      setLoading(false);
+
+    }, 1000);
+
+  };
+
+
+
+
+
+  return (
+
+    <div className="even-odd-container">
+
+      <h1 className="title">Even or Odd Checker</h1>
+
+
+
+      <input
+
+        className="number-input"
+
+        type="text"
+
+        data-testid="number-input"
+
+        onChange={(e) => setInputValue(e.target.value)}
+
+        value={inputValue}
+
+        placeholder="Enter a number"
+
+      />
+
+
+
+      <button
+
+        data-testid="check-button"
+
+        onClick={handleChecker} className="check-button">Check</button>
+
+
+
+      <div className="result-area">
+
+        {loading ? (
+
+          <p data-testid="loading">Checking...</p>
+
+        ) : (
+
+          result !== null \&\& <p data-testid="result">{result}</p>
+
+        )}
+
+      </div>
+
+    </div>
+
+  );
+
+}
+
+
+
+export default EvenOrOdd;
+
+
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**problem - sum or all numbers in an array**
+
+
+
+**approach 1 - using recursion**
+
+
+
+**f**unction sumArray(arr) {
+
+  function helper(i) {
+
+    if (i === arr.length) return 0;
+
+    return arr\[i] + helper(i + 1);
+
+  }
+
+  return helper(0);
+
+}
+
+
+
+
+
+**approach 2 - using direct reduce**
+
+
+
+function sumArray(arr) {
+
+  function helper(i) {
+
+    return arr.reduce((acc, curr) => acc + curr, 0)
+
+  }
+
+  return helper(0);
+
+}
+
+
+
+module.exports = { sumArray };
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+
+
+**Problem Accordion ----**
+
+
+
+
+
+import React, { useState } from "react";
+
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+
+import './styles.css';
+
+
+
+function Accordion({ items }) {
+
+    const \[openIndex, setOpenIndex] = useState(null);
+
+
+
+    if (!Array.isArray(items) || items.length === 0) {
+
+        return <div className="accordion">No items available</div>;
+
+    }
+
+
+
+    const toggleAccordion = (index) => {
+
+        setOpenIndex(openIndex === index ? null : index);
+
+    };
+
+
+
+    return (
+
+        <div className="accordion">
+
+            {items.map((item, index) => (
+
+                <div className="accordion-item" key={index}>
+
+                    <button
+
+                        className="accordion-title"
+
+                        aria-expanded={openIndex === index}
+
+                        onClick={() => toggleAccordion(index)}
+
+                    >
+
+                        {item.title}
+
+                        <span>{openIndex === index ? <FaChevronUp /> : <FaChevronDown />}</span>
+
+                    </button>
+
+
+
+                    {openIndex === index \&\& (
+
+                        <div className="accordion-content">
+
+                            <p>{item.content}</p>
+
+                        </div>
+
+                    )}
+
+                </div>
+
+            ))}
+
+        </div>
+
+    );
+
+}
+
+
+
+export default Accordion;
+
+
+
+
+
+**With explaination step by step**
+
+
+
+**first time openIndex = null**
+
+
+
+**click -**
+
+
+
+* onClick={() => toggleAccordion(index= 2)}
+
+                       |
+
+ 
+
+* const toggleAccordion = (index = 2) => {
+
+ 
+
+setOpenIndex(openIndex === index ? null : index)
+
+}
+
+
+
+* openIndex === 2  // null === 2?
+* Ye false hai, kyunki null !== 2.
+
+
+
+* openIndex === 2 false → else part execute → index set hota hai
+* 
+* index = 2 → setOpenIndex(2)
+
+
+
+* openIndex = 2
+
+
+
+
+
+* {openIndex === index ? "▲" : "▼"} - click karne ke bad {2=== 2} to true par ▲ baki bydefault false par ▼ show hoga
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem:- Array ChunKing**
+
+
+
+
+
+
+
+function chunkArray(arr, n) {
+
+
+
+    const result = \[]
+
+
+
+    for (let i = 0; i < arr.length; i += n) {
+
+        result.push(arr.slice(i, i + n));
+
+    }
+
+
+
+    return result;
+
+}
+
+
+
+module.exports = chunkArray;
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- Asterisk Field Validation**
+
+import React, { useState } from "react";
+
+import "./styles.css";
+
+
+
+function AsteriskFieldValidation() {
+
+  const \[formData, setFormData] = useState({
+
+    name: "",
+
+    location: ""
+
+  });
+
+
+
+  const \[submitted, setSubmitted] = useState(false);
+
+  const \[isValid, setIsValid] = useState(false);
+
+
+
+  const handleChange = (e) => {
+
+    const { id, value } = e.target;
+
+    setFormData({ ...formData, \[id]: value });
+
+  };
+
+
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    setSubmitted(true);
+
+
+
+    if (formData.name !== "" \&\& formData.location !== "") {
+
+      setIsValid(true);
+
+    } else {
+
+      setIsValid(false);
+
+    }
+
+  };
+
+
+
+  return (
+
+    <div className="container">
+
+      <h1 className="title">Asterisk Field Validation</h1>
+
+      <form className="form" onSubmit={handleSubmit} data-testid="form">
+
+        {/\* Name input \*/}
+
+        <div className="input-group">
+
+          <label htmlFor="name" className="label">
+
+            Name <span className="asterisk">\*</span>
+
+          </label>
+
+          <input
+
+            id="name"
+
+            className="input"
+
+            type="text"
+
+            placeholder="Enter your name"
+
+            onChange={handleChange}
+
+            data-testid="name-input"
+
+ 
+
+          />
+
+          {submitted \&\& formData.name === "" \&\& (
+
+            <p
+
+              className="text-red-500 text-sm mt-1"
+
+              data-testid="name-error"
+
+            >Name is required.</p>
+
+          )}
+
+        </div>
+
+
+
+        {/\* Location input \*/}
+
+        <div className="input-group">
+
+          <label htmlFor="location" className="label">
+
+            Location <span className="asterisk">\*</span>
+
+          </label>
+
+          <input
+
+            id="location"
+
+            className="input"
+
+            type="text"
+
+            placeholder="Enter your location"
+
+            onChange={handleChange}
+
+            data-testid="location-input"
+
+          />
+
+          {submitted \&\& formData.location === "" \&\& (
+
+            <p
+
+              className="text-red-500
+
+              text-sm mt-1"
+
+              data-testid="location-error"
+
+            >Location is required.</p>
+
+          )}
+
+        </div>
+
+
+
+        {/\* Submit button \*/}
+
+        <button
+
+          type="submit"
+
+          className="submit-button"
+
+          data-testid="submit-button"
+
+        >
+
+          Submit
+
+        </button>
+
+      </form>
+
+
+
+      {submitted \&\& isValid \&\& (
+
+        <div className="mt-8" data-testid="success-message">
+
+          <h3>Submitted Successfully!</h3>
+
+          <p>Name: {formData.name}</p>
+
+          <p>Location: {formData.location}</p>
+
+        </div>
+
+      )}
+
+    </div>
+
+  );
+
+}
+
+
+
+export default AsteriskFieldValidation;
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- Make Counter - approach - 1 tough**
+
+
+
+
+
+function makeCounter(initialValue = 0) {
+
+
+
+    let current = initialValue;
+
+    const start = initialValue;
+
+
+
+    return {
+
+        increment() {
+
+            current = current + 1;
+
+            return current;
+
+        },
+
+        decrement() {
+
+            current = current - 1;
+
+            return current;
+
+        },
+
+        reset() {
+
+            current = start;
+
+            return current;
+
+        }
+
+    }
+
+}
+
+
+
+const counter = makeCounter(5);
+
+
+
+console.log(counter.increment());
+
+console.log(counter.increment());
+
+console.log(counter.decrement());
+
+console.log(counter.reset());
+
+console.log(counter.decrement());
+
+
+
+module.exports = makeCounter;
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- Make Counter - approach - 2 Easy And Simple**
+
+function makeCounter(initialValue = 0) {
+
+
+
+    let current = initialValue;
+
+
+
+    return {
+
+        increment: () => ++current,
+
+        decrement: () => --current,
+
+        reset: () => (current = initialValue)
+
+    }
+
+}
+
+
+
+const counter = makeCounter(5);
+
+console.log(counter.increment())
+
+console.log(counter.increment())
+
+console.log(counter.decrement())
+
+console.log(counter.reset())
+
+console.log(counter.decrement())
+
+
+
+
+
+
+
+module.exports = makeCounter;
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- ContactFrom - reactjs namastedev proper working**
+
+import React, { useState } from 'react';
+
+import './styles.css'
+
+
+
+function ContactForm() {
+
+
+
+  const \[formData, setFormData] = useState({
+
+    name: '',
+
+    email: '',
+
+    message: ''
+
+  })
+
+
+
+  const \[submitted, setSubmitted] = useState(false);
+
+  const \[isSuccess, setIsSuccess] = useState(false);
+
+  const \[emailError, setEmailError] = useState("");
+
+
+
+  const handleChange = (e) => {
+
+    const { id, value } = e.target;
+
+    setFormData({ ...formData, \[id]: value })
+
+  }
+
+
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    setSubmitted(true);
+
+
+
+    if (formData.email === "") {
+
+      setEmailError("Email is required");
+
+    }
+
+    else {
+
+      const emailPattern = /^\[^\\s@]+@\[^\\s@]+\\.\[^\\s@]+$/;
+
+      if (!emailPattern.test(formData.email)) {
+
+        setEmailError("Invalid email format");
+
+        return;
+
+      } else {
+
+        setEmailError("");
+
+      }
+
+    }
+
+
+
+    if (
+
+      formData.name !== "" \&\&
+
+      formData.email !== "" \&\&
+
+      formData.message !== ""
+
+    ) {
+
+      setIsSuccess(true);
+
+    }
+
+  }
+
+
+
+  return (
+
+    isSuccess ? (
+
+      <div className="thankyou-container">
+
+        <div className="thankyou-card">
+
+          <h2 className="thankyou-text">Thank you, {formData.name}!</h2>
+
+        </div>
+
+      </div>
+
+    ) : (
+
+      <div className="container">
+
+        <div className="form-card">
+
+          <form onSubmit={handleSubmit}>
+
+            <div className="form-group">
+
+              <label htmlFor="name">Name:</label>
+
+              <input
+
+                id="name"
+
+                type="text"
+
+                onChange={handleChange}
+
+                value={formData.name}
+
+                placeholder="Enter your name"
+
+              />
+
+              {submitted \&\& formData.name === "" \&\& (
+
+                <p className="error">Name is required</p>
+
+              )}
+
+            </div>
+
+
+
+            <div className="form-group">
+
+              <label htmlFor="email">Email:</label>
+
+              <input
+
+                id="email"
+
+                type="email"
+
+                onChange={handleChange}
+
+                value={formData.email}
+
+                placeholder="Enter your email"
+
+              />
+
+              {submitted \&\& emailError \&\& <p className="error">{emailError}</p>}
+
+            </div>
+
+
+
+            <div className="form-group">
+
+              <label htmlFor="message">Message:</label>
+
+              <textarea
+
+                id="message"
+
+                onChange={handleChange}
+
+                value={formData.message}
+
+                placeholder="Enter your message"
+
+              />
+
+              {submitted \&\& formData.message === "" \&\& (
+
+                <p className="error">Message is required</p>
+
+              )}
+
+            </div>
+
+
+
+            <button type="submit" className="submit-btn">
+
+              Submit
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    )
+
+  );
+
+}
+
+
+
+export default ContactForm;
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**style.css**
+
+
+
+
+
+body {
+
+  font-family: sans-serif;
+
+  -webkit-font-smoothing: auto;
+
+  -moz-font-smoothing: auto;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  font-smoothing: auto;
+
+  text-rendering: optimizeLegibility;
+
+  font-smooth: always;
+
+  -webkit-tap-highlight-color: transparent;
+
+  -webkit-touch-callout: none;
+
+}
+
+
+
+/\* Center page \*/
+
+.container {
+
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background-color: #f4f6f9;
+
+}
+
+
+
+/\* Card Design \*/
+
+.form-card {
+
+  background: #ffffff;
+
+  padding: 30px;
+
+  width: 350px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/\* Heading \*/
+
+.form-card h1 {
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: #333;
+
+}
+
+
+
+/\* Form group spacing \*/
+
+.form-group {
+
+  margin-bottom: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+
+/\* Labels \*/
+
+.form-group label {
+
+  margin-bottom: 5px;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+}
+
+
+
+/\* Inputs \& Textarea \*/
+
+.form-group input,
+
+.form-group textarea {
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+
+  transition: 0.3s ease;
+
+}
+
+
+
+/\* Focus effect \*/
+
+.form-group input:focus,
+
+.form-group textarea:focus {
+
+  outline: none;
+
+  border-color: #007bff;
+
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+
+}
+
+
+
+/\* Textarea height \*/
+
+textarea {
+
+  resize: none;
+
+  height: 80px;
+
+}
+
+
+
+/\* Button \*/
+
+.submit-btn {
+
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: #007bff;
+
+  border: none;
+
+  border-radius: 5px;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+
+
+/\* Button hover \*/
+
+.submit-btn:hover {
+
+  background-color: #0056b3;
+
+}
+
+
+
+.error {
+
+  color: #b00020;
+
+  background-color: #ffe6e9;
+
+  padding: 6px 10px;
+
+  border-radius: 4px;
+
+  margin-top: 6px;
+
+  font-size: 13px;
+
+}
+
+
+
+.thankyou-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 100vh; /\* Full screen height \*/
+
+  background-color: #f4f6f9; /\* light background \*/
+
+}
+
+
+
+/\* Card style for the message \*/
+
+.thankyou-card {
+
+  background-color: #ffffff;
+
+  padding: 30px 40px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  text-align: center;
+
+  width: 350px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+\*\*\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+problem :- Vowels Count in js\*\*
+
+
+
+function countVowels(str) {
+
+  const vowels = "aeiou";
+
+  return str
+
+    .toLowerCase()           // lowercase kar diya
+
+    .split("")               // string ko array mein convert kiya
+
+    .filter(char => vowels.includes(char))  // sirf vowels rakhe
+
+    .length;                 // vowel count return kiya
+
+}
+
+if you want to online js complier use console
+
+console.log(countVowels("hello")); // 2
+
+console.log(countVowels("JavaScript")); // 3 // 487257
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- Array.prototype.reduce**
+
+
+
+Array.prototype.myReduce = function(callback, initialValue) {
+
+
+
+  if (typeof callback !== "function") {
+
+    throw new TypeError("Callback must be a function");
+
+  }
+
+
+
+  if (this.length === 0 \&\& initialValue === undefined) {
+
+    throw new TypeError("Reduce of empty array with no initial value");
+
+  }
+
+
+
+  let acc = initialValue;
+
+  let start = 0;
+
+
+
+  if (acc === undefined) {
+
+    // find first valid index (important for sparse arrays)
+
+    while (start < this.length \&\& !(start in this)) {
+
+      start++;
+
+    }
+
+
+
+    acc = this\[start];
+
+    start++;
+
+  }
+
+
+
+  for (let i = start; i < this.length; i++) {
+
+    if (i in this) {
+
+      acc = callback(acc, this\[i]);
+
+    }
+
+  }
+
+
+
+  return acc;
+
+};
+
+
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem :- Factorial of A number**
+
+function factorial(n) {
+
+
+
+  if (n < 0 || !Number.isInteger(n)) return false;
+
+
+
+  let result = 1;
+
+
+
+  for (let i = 2; i <= n; i++){
+
+    result = result \* i;
+
+  }
+
+  return result;
+
+}
+
+
+
+module.exports = { factorial };
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Problem :- sum of n natural numbers**
+
+function sumN(n) {
+
+
+
+ if (typeof n !== "number" || n < 0 || !Number.isInteger(n)) return false;
+
+
+
+  return n \* (n + 1) / 2;
+
+}
+
+
+
+module.exports = { sumN };
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Problem :-  count Even Number**
+
+function countEvens(arr) {
+
+  // invalid input check
+
+  if (!Array.isArray(arr)) return false;
+
+  if (!arr.every(num => typeof num === "number" \&\& Number.isFinite(num))) return false;
+
+
+
+  // empty array ke liye 0 return karo
+
+  if (arr.length === 0) return 0;
+
+
+
+  // count even numbers
+
+  return arr.filter(num => num % 2 === 0).length;
+
+}
+
+
+
+module.exports = { countEvens };
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem :- Count Odd Numbers**
+
+
+
+function countOdds(arr) {
+
+  // invalid input check
+
+  if (!Array.isArray(arr)) return false;
+
+  if (!arr.every(num => typeof num === "number" \&\& Number.isFinite(num))) return false;
+
+
+
+  // empty array ke liye 0 return karo
+
+  if (arr.length === 0) return 0;
+
+
+
+  // count Odd numbers
+
+  return arr.filter(num => num % 2 !== 0).length;
+
+}
+
+
+
+module.exports = { countOdds };
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Problem :- ReverseWords**
+
+
+
+function reverseWords(sentence) {
+
+   return sentence
+        .split(' ')
+        .map(word => word.split('').reverse().join(''))
+        .join(' ');
+
+    );
+
+}
+
+Explaination
+
+"Hello World".split()
+
+👉 Output:
+
+["Hello World"]
+
+📌 Isko bolte hain: single-element array (returns single element of array)
+
+______
+
+"Hello".split('')
+
+👉 Output:
+
+[ [ 'H', 'e', 'l', 'l', 'o' ], [ 'W', 'o', 'r', 'l', 'd' ] ]
+
+📌 Isko bolte hain: character array (returns each character of element array)
+
+_________
+
+"Hello World".split(' ')
+
+👉 Output:
+
+["Hello", "World"]
+
+📌 Isko bolte hain: word array (return each world of array)
+
+
+module.exports = reverseWords
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Problem:- Remove Duplicate From Array** 
+
+
+function removeDuplicates(arr) {
+
+  // return \[...new Set(arr)];  // Set ek special object hai jo:
+
+  return arr.filter((item, index) => arr.indexOf(item) === index)
+
+}
+
+
+
+module.exports = removeDuplicates;
+
+
+
+Explaintion
+
+Set JavaScript ka ek built-in object hai jo sirf unique values store karta hai.
+
+isme  return [...new Set(arr)] isme [] use kiya hai wapas array bna do 
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem :- Largest Number Formed**
+
+
+
+
+
+function formLargestNumber(arr) {
+
+
+
+  arr = arr.map(String);
+
+
+
+
+
+  arr.sort((a, b) => (b + a) - (a + b));
+
+
+
+  if (arr\[0] === "0") return "0";
+
+
+
+  return arr.join('');
+
+
+
+// simple 	
+
+
+
+}
+
+
+
+module.exports = formLargestNumber;
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+
+
+**Problem :- Anagram Checker** 
+
+function isAnagram(str1, str2) {
+
+  function cleanString(str) {
+    return str
+      .toLowerCase()
+      .split('')
+      .filter(ch => ch >= 'a' && ch <= 'z') // sirf letters rakho
+      .sort()
+      .join('');
+  }
+
+  return cleanString(str1) === cleanString(str2);
+}
+
+console.log(isAnagram("listen!!", "silent"));
+
+
+___________________
+
+
+function isAnagram(str1, str2) {
+    
+    str1 = str1.toLowerCase().split('').sort().join('')
+    str2 = str2.toLowerCase().split('').sort().join('')
+    
+    return str1 === str2
+}
+
+console.log(isAnagram("listen!!", "silent"));
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem :- Confirmation Model**
+
+
+
+import React, { useState } from "react";
+
+import "./styles.css";
+
+
+
+function ConfirmationModal() {
+
+
+
+  const \[showModal, setShowModal] = useState(false);
+
+  const \[status, setStatus] = useState("");
+
+
+
+  return (
+
+    <div className="modal-container">
+
+
+
+      <button
+
+        className="open-modal-btn"
+
+        data-testid="open-modal-button"
+
+        onClick={() => setShowModal(true)}
+
+      >
+
+        Open Confirmation Modal
+
+      </button>
+
+
+
+      {showModal \&\& (
+
+        <div className="modal-backdrop">
+
+          <div className="modal-box"
+
+            data-testid="confirmation-modal"
+
+          >
+
+
+
+            <h2 className="modal-title"
+
+              data-testid="modal-title"
+
+            >Confirm Action</h2>
+
+
+
+            <p className="modal-message"
+
+              data-testid="modal-message"
+
+            >
+
+              Are you sure you want to proceed?
+
+            </p>
+
+
+
+            <div className="modal-buttons">
+
+
+
+              <button
+
+                className="confirm-btn"
+
+                data-testid="confirm-button"
+
+                onClick={() => {
+
+                  setStatus("Confirmed")
+
+                  setShowModal(false)
+
+                }}
+
+              >
+
+                Confirm
+
+              </button>
+
+
+
+              <button
+
+                className="cancel-btn"
+
+                data-testid="cancel-button"
+
+                onClick={() => {
+
+                  setStatus("Cancelled")
+
+                  setShowModal(false)
+
+                }}
+
+              >
+
+                Cancel
+
+              </button>
+
+
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      )}
+
+
+
+      <div className="action-status"
+
+          data-testid="action-status"
+
+      >
+
+        {status}
+
+      </div>
+
+
+
+    </div>
+
+  );
+
+}
+
+
+
+export default ConfirmationModal;
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- URL Validation**
+
+
+
+import { useState } from "react";
+
+
+
+function URLValidator() {
+
+  const \[input, setInput] = useState("");
+
+  const \[isValid, setIsValid] = useState(null);
+
+
+
+  function validateUrl(e) {
+
+    const value = e.target.value;
+
+    setInput(value);
+
+
+
+    try {
+
+      if (value.includes(" ")) throw new Error();
+
+      const url = new URL(value);
+
+
+
+      if (!\["http:", "https:"].includes(url.protocol)) {
+
+        throw new Error();
+
+      }
+
+
+
+      setIsValid(true);
+
+    } catch {
+
+      setIsValid(false);
+
+    }
+
+  }
+
+
+
+  return (
+
+    <div>
+
+      <h1>URL Validator</h1>
+
+
+
+      <input
+
+        type="text"
+
+        data-testid="url-input"
+
+        value={input}
+
+        onChange={validateUrl}
+
+        placeholder="Enter a URL"
+
+      />
+
+
+
+      {input \&\& (
+
+        isValid ? (
+
+          <p data-testid="result"  style={{ color: "green" }}>Valid URL</p>
+
+        ) : (
+
+            <p data-testid="result" style={{ color: "red" }}>Invalid URL</p>
+
+        )
+
+      )}
+
+    </div>
+
+  );
+
+}
+
+
+
+export default URLValidator;
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**problem :- Merge Array**
+
+function mergeData(arr1 = \[], arr2 = \[]) {
+
+
+
+    const map = {}
+
+
+
+    const combined = arr1.concat(arr2)
+
+
+
+    combined.forEach(obj => {
+
+        map\[obj.id] = { ...map\[obj.id], ...obj }
+
+    })
+
+
+
+    return Object.values(map)
+
+}
+
+
+
+//For the purpose of user debugging.
+
+mergeData();
+
+
+
+module.exports = mergeData
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem - Captlized Word**
+
+
+function capitalizeWords(sentence) {
+    
+    return sentence.trim().split(' ').filter(w => w !=='').map(w => w[0].toUpperCase() + w.slice(1).toLowerCase()).join(' ')
+}
+
+console.log(capitalizeWords("hello world"));
+console.log(capitalizeWords("javaScript is FUN"));
+console.log(capitalizeWords(" multiple  spaces "));
+console.log(capitalizeWords(""));
+
+
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+
+**Problem - Custom sort for online copiler**
+
+
+
+const input = \["g", "s", 5, 2, "c", "e", 6, 1, "a"];
+
+
+
+function customSort(input) {
+
+ 
+
+    const letter = input.filter(x => typeof x === 'string').sort()
+
+    const number = input.filter(n => typeof n === 'number').sort((a,b) => a-b)
+
+    return \[...letter, ...number]
+
+}
+
+console.log(customSort(input))
+ -->

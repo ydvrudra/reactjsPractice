@@ -1,0 +1,814 @@
+problem :- find Largest number in array approach 1 using loop
+
+
+
+
+arr = list(map(int, input("Enter the array list").split()))
+
+def largest_ele(arr):
+ 
+    largest = max(arr)
+    print(largest)
+ 
+largest_ele(arr)
+_____________
+
+# Array
+arr = [20, 5, 35, 40, 10, 50, 15];
+
+
+# Function to find largest element
+def find_largest(arr):
+    largest = arr[0]  # assume first element is largest
+ 
+    for num in arr:
+        if num > largest:
+            largest = num
+ 
+    return largest  # return after loop finishes
+
+# Print result
+print(find_largest(arr))
+
+____________________________________________________
+using build in method max()
+
+# Array
+arr = [20, 5, 35, 40, 10, 50, 15];
+
+
+# Function to find largest element
+def find_largest(arr):
+ 
+return max(arr);
+
+# Print result
+print(find_largest(arr))
+
+______________________________________________________
+
+2.Problem :-  both largest_smallest find
+
+
+
+
+# Array
+arr = [20, 5, 35, 40, 10, 50, 15];
+
+
+# Function to find largest element
+def find_largest_smallest(arr):
+ 
+ 	largest = max(arr)
+ 	smallest = min(arr)
+ 	return smallest, largest
+
+smallest , largest = find_largest_smallest(arr)
+# Print result
+print("smallest:", smallest)
+print('largest:', largest)
+
+
+_____________________________________________________________________________________
+
+3. Problem :- find second smallest in an array
+Array
+arr = [26, 6, 4, 2, 24]
+
+# Function to find largest element
+def find_second_smallest(arr):
+ 	sorted_arr = sorted(arr)
+ 
+ 	return sorted_arr[1]
+
+# Print result
+print(find_second_smallest(arr))
+___________________________________________________________________
+4. Problem :- find second largest in an array
+Array
+arr = [26, 6, 4, 2, 24]
+
+# Function to find largest element
+def find_second_largest(arr):
+ 	sorted_arr = sorted(arr)
+ 
+ 	return sorted_arr[-2]
+
+# Print result
+print(find_second_largest(arr))
+
+_________________________________________________________________________________________________________________
+
+5. Problem :- find second smallest and largest number in an array
+
+Array
+arr = [26, 6, 4, 2, 24]
+
+# Function to find largest element
+def find_second_smallest_largest(arr):
+ 	sorted_arr = sorted(arr)
+ 
+ 	second_smallest = sorted_arr[1]
+ 	second_largest = sorted_arr[-2]
+ 
+ 	return second_smallest,second_largest
+second_smallest , second_largest = find_second_smallest_largest(arr)
+
+# Print result
+print("second_smallest:",second_smallest)
+print("second_largest:",second_largest)
+
+__________________________________________________________________________________________________________________________
+
+6. Problem sum of Array element    and using sum method ////return sum(arr)
+
+# Array
+arr = [26, 6, 4, 2, 24]
+
+
+def sumtotal(arr):
+    total = 0
+    for i in arr:
+        total = total + i
+    return total
+
+print('sum:', sumtotal(arr))
+
+**____________________________________________________________________
+
+problem Reverse Array approach 1**
+Array
+arr = [20, 5, 35, 40, 10, 50, 15];
+
+
+# Function to find largest element
+def sum_arr(arr):
+    arr.reverse()
+    return arr
+
+# Print result
+print(sum_arr(arr))
+
+____________________________________________________________________________________________
+7.1 approach 2
+Array
+arr = [20, 5, 35, 40, 10, 50, 15];
+
+
+# Function to find largest element
+def sum_arr(arr):
+    reversed_arr =  list(reversed(arr))
+    return reversed_arr
+
+# Print result
+print(sum_arr(arr))
+
+________________________________________________________________________________________________
+**8. #41 Leetcode-First Missing Positive
+___________________________________________________
+
+1 positive or negetive
+
+num = int(input())
+
+if num > 0:
+    print("positive")
+elif num < 0:
+    print("negitive")
+else:
+    print("zero")
+
+________________________________________________
+
+
+2 Even Or Odd
+
+
+num = int(input("Enter a number"))
+
+if num %2 == 0:
+    print("Even")
+else:
+    print("Odd")
+________________________________________________________________________________________________
+
+3. sum of natural number
+
+
+num = int(input())
+
+sum_n = num*(num+1)//2
+
+print(sum_n)
+
+______________________________________________________________________________________________
+
+4. Find the Sum of Numbers in a given Range in Python
+
+
+
+num1 = int(input("enter first number:"))
+num2 = int(input("enter second number:"))
+
+sum_nums = (num2*(num2+1)/2 - (num1*(num1-1)/2))
+
+print(sum_nums);
+
+_______________________________________________________________
+
+5. Find the Greatest of the Two Numbers​ in Python
+
+
+num1 = int(input("Enter the first number:"))
+num2 = int(input("Enter the second number:"))
+
+
+def nums_grater(num1,num2):
+    if num1>num2:
+        print("num1 is greater than num2:", num1)
+ 
+    elif num2>num1:
+       print("num2 is greater than num1:", num2)
+ 
+    else:
+         print("Both numbers are equal:", num1)
+ 
+ 
+nums_grater(num1, num2)
+
+_________________________________________________________________________________________________________
+
+6. Find the Greatest of the Three Numbers​ in Python
+
+
+num1 = int(input("Enter the first number:"))
+num2 = int(input("Enter the second number:"))
+num3 = int(input("Enter the third number:"))
+
+
+def nums_grater(num1,num2,num3):
+    if num1 >= num2 and num1 >= num3:
+        print("Greatest number is:", num1)
+ 
+    elif num2 >=num1 and num2 >= num3:
+        print("Greatest number is:", num2)
+ 
+    else:
+          print("Greatest number is:", num3)
+ 
+ 
+nums_grater(num1, num2,num3)
+
+________________________________________________________________________________
+leap year or not
+
+year = int(input("Enter the Year:"))
+
+def leap_year(year):
+    if(year%4 == 0 and year % 100 !=0) or (year%400 == 0):
+        print(year, "is a Leap Year")
+    else:
+        print(year, "is not Leap year")
+ 
+ 
+leap_year(year)
+
+_________________________________________________________________
+8. Check Whether a Number is a Prime or Not
+
+
+num = int(input())
+
+if num <= 1:
+    print("Not Prime")
+else:
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+
+______________________________________________________________________________________
+8.1 print prime number given range
+
+start = int(input("Enter start: "))
+end = int(input("Enter end: "))
+
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num*0.5)+1):
+        if num%i ==0:
+            return False
+    return True
+
+for num in range(start, end+1):
+    is_prime(num)
+    print(num)
+
+
+_____________________________________________________________________
+
+9. Sum of Digits of a Number in Python
+
+
+num = int(input("enter the numbers"))
+
+def sumNo(num):
+    sum_No = sum(map(int, str(num)))
+    return sum_No
+
+print(sumNo(num))
+
+_________________________________________________________________________________________________________________
+10. Find the Reverse of a Number in Python Language
+
+
+num = int(input("enter the numbers"))
+
+def sumNo(num):
+    s = str(num)
+    return s[::-1] // ya phir one line me return reverse = int(str(num)[::-1])
+
+print(sumNo(num))
+_____________________________________________________________________________________________________________________________
+11 . Check Whether or Not the Number is a Palindrome in Python
+
+
+num = int(input("enter the numbers"))
+
+def Palindrome(num):
+    reverse = int(str(num)[::-1])
+    if num == reverse:
+        print("palimdrome No")
+    else:
+        print("not")
+
+Palindrome(num)
+
+_____________________________________________________________________________________________________
+
+12 . Check Whether a Given Number is an Armstrong Number or Not in Python
+
+
+num = int(input("enter the numbers"))
+
+def Armstrone(num):
+   power = len(str(num))
+   result = sum(int(d)**power for d in str(num))
+ 
+   if result == num:
+       print("Armstrong Number:")
+   else:
+        print("not Armstrong")
+ 
+
+print(Armstrone(num))
+
+_____________________________________________________________________________________________________________________________________________
+
+
+
+16. Fibonacci Series in Python
+
+def fibonacci(n):
+   a, b = 0, 1
+ 
+   for i in range(n):
+       print(a, end=" ")
+       a, b=b, a+b
+ 
+ 
+n = int(input())
+fibonacci(n)
+
+____________________________________________________________________________________________________________
+
+17. Find the Nth Term of a Fibonacci Series in Python
+
+def fib(n):
+	if n < 2:
+		return n
+	return fib(n - 1) + fib(n - 2)
+
+
+n = 6
+print(fib(n-1))
+
+_________________________________________________________________________________________________________
+
+
+18. Factorial of a Number in Python
+
+
+num = int(input("Enter the number"))
+
+
+def facto(num, fact = 1):
+    for i in range(1, num+1):
+        fact = fact*i
+    return fact
+
+print(facto(num))
+
+
+//////
+
+
+
+num = int(input("ENter the any number"))
+
+
+def fac(num, fact=1):
+    for i in range(1, num+1):
+        fact = fact*i
+    print(fact)
+
+fac(num)
+
+
+______________________________________________________________________________________________
+
+19. Python Program to find Power of a number
+
+
+
+num = int(input("ENter the any number"))
+power = int(input("Enter the power"))
+
+
+print(pow(num,power))
+_________________________________________________________________________________________________________________________
+
+20.  Python Program to Finding out the Prime Factors of a Number
+
+
+num = int(input("Enter number: "))
+
+i = 2
+
+while i <= num:
+    if num % i == 0:
+        print(i)
+        num = num // i
+    else:
+        i += 1
+
+
+_____________________________________________________________________________________
+
+Array Based
+
+20.  Reverse an Array elements
+
+
+arr = list(map(int, input("enter the array").split()))
+
+
+reverse = (arr[::-1])
+
+print(*reverse)
+
+
+
+____________________________________________________________________________________________________________________________________
+
+IMG - 21. Python program to Sort first half in ascending order and second half in descending order in an array
+
+
+arr = list(map(int, input("enter the array: ").split()))
+
+arr.sort()
+
+n = len(arr)
+
+arr[n//2:] = arr[n//2:][::-1]
+
+print("array", *arr);
+
+
+______________________________________________________________________________________________________________________
+
+
+22. Python Program to sort the elements of an array
+
+
+arr = list(map(int, input("enter  the array").split()))
+
+
+arr.sort()
+print("asc", *arr)
+
+arr.sort(reverse = True)
+print("desc",*arr)
+___________________________________________________________________________
+
+23. Finding the frequency of element Frequency of elements in an array using Python
+
+
+
+arr = list(map(int, input("Enter the Array").split()))
+
+
+for i in sorted(set(arr)):
+    print(i, arr.count(i))
+ ________________________________________________________________________________________________________
+Python Program for sorting elements of an Array by Frequency (isko hardcode kiya)
+
+arr = [10, 20, 30, 40, 40, 50, 50, 50]
+
+# Short and simple: sort by frequency (descending), tie by first occurrence
+arr.sort(key=lambda x: (-arr.count(x), arr.index(x)))
+
+print(arr)
+
+______________________________________________________________________________________________________________________________
+
+
+24. longest Palindrome no
+
+
+arr = list(map(int, input("enter the arr").split()))
+
+longest= ""
+for num in arr:
+    s = str(num)
+    if s == s[::-1] and len(s) > len(longest):
+        longest = s
+print(int(longest))
+__________________________________________________________________
+
+
+25. Python Program for Counting Distinct Elements in an Array(duplicate element)
+
+
+arr = list(map(int, input("Enter the array").split()))
+
+a = set(arr)
+print(len(a))
+
+_________________________________________________________________________________________________
+26. Finding Repeating elements in an Array in Python
+
+
+
+arr = list(map(int, input("enter the array").split()))
+
+
+for i in sorted(set(arr)):
+    if arr.count(i) > 1:
+        print(i)
+ 
+**_______________________________________________________________
+Finding Non Repeating elements in an Array in Python**
+ 
+
+arr = list(map(int, input("enter the array").split()))
+
+
+
+for i in sorted(set(arr)):
+    if arr.count(i) == 1:
+        print(i)
+
+_______________________________________________________________________________________________________________
+
+27. Removing Duplicates elements from an array
+
+
+
+arr = list(map(int, input("enter the array").split()))
+
+
+remove = set(arr)
+sorted_arr = sorted(remove)
+
+print(sorted_arr)
+ 
+__________________________________________________________________________________________________________________________
+
+28.  Finding minimum scalar product of two vectors in Python
+
+
+
+# Input vectors
+A = list(map(int, input("Enter vector A: ").split()))
+B = list(map(int, input("Enter vector B: ").split()))
+
+# Step 1: Sort A ascending, B descending
+A.sort()
+B.sort(reverse=True)
+
+# Step 2: Multiply corresponding elements and sum
+min_scalar = sum(a*b for a, b in zip(A, B))
+
+print("Minimum scalar product:", min_scalar)
+
+________________________________________________________________________________________________________
+
+29 Python Program to Find Maximum Scalar Product of Two Vectors in an Array
+
+
+
+A = list(map(int, input("enter the Vector A: ").split()))
+B = list(map(int, input("enter the Vector B: ").split()))
+
+
+A.sort()
+B.sort()
+
+maximum_sc = sum(a*b for a,b in zip(A,B))
+print(maximum_sc)
+
+____________________________________________________________________________________________________________
+
+30. Counting the number of even and odd elements in an array
+
+arr = list(map(int, input("Enter the arr: ").split()))
+
+even_no = []
+odd_no = []
+
+for i in arr:
+    if i % 2 == 0:
+        even_no.append(i)
+    else:
+        odd_no.append(i)
+
+print("Even numbers:", even_no)
+print("Odd numbers:", odd_no)
+____________________________________________________________________________________________________________________
+31 most imp - Find all Symmetric pairs in an array :
+
+
+
+def findpairs(pairs):
+    s = set()
+ 
+    for (x,y) in pairs:
+        if (y,x) in s:
+            print((x,y))
+        s.add((x,y))
+
+pairs = [(3,4),(1,2), (5,2), (7,10), (4,3), (2,5)]
+
+findpairs(pairs)
+
+_____________________________________________________________________________________________________________
+32 . Find maximum product sub-array in a given array
+
+
+
+arr = [1, -2, -3, 0, 7, -8, -2]
+
+max_prod = arr[0]
+min_prod = arr[0]
+result = arr[0]
+
+for i in arr[1:]:
+    if i < 0:
+        max_prod, min_prod = min_prod, max_prod   # swap
+    max_prod = max(i, i*max_prod)
+    min_prod = min(i, i*min_prod)
+    result = max(result, max_prod)
+
+print("Maximum product sub-array is", result)
+ 
+_______________________________________________________________________________________________________________
+
+33. Find whether arrays or disjoint or not using Python
+
+
+
+arr1 = [1,2,3]
+arr2 = [4,5,6]  → Disjoint
+arr1 = [1,2,3]
+arr2 = [3,4,5]  → Not Disjoint (common element = 3)
+______
+
+
+arr1 = list(map(int, input("Enter the first array: ").split()))
+arr2 = list(map(int, input("Enter the second array: ").split()))
+
+
+set1 = set(arr1)
+set2 = set(arr2)
+
+if set1 & set2:
+    print("not disjoin")
+else:
+    print("disjoin")
+
+_________________________________________________________________________________
+34 Check whether array is subset of another array or not in Python
+
+
+
+arr1 = list(map(int, input("Enter the array first:").split()))
+arr2 = list(map(int, input("Enter the array second:").split()))
+
+
+
+if set(arr2).issubset(set(arr1)):
+    print("subset")
+else:
+    print("not")
+
+________________________________________________________________________________________
+
+35 . Finding Sum of Minimum Absolute Difference of Array using Python
+
+
+arr = sorted(map(int, input("ENter the arrays").split()))
+
+
+minimum_abs = sum(abs(a -b) for a,b in zip(arr, arr[1:]))
+
+print(minimum_abs)
+
+_________________________________________________________________________________________________________________
+36. Python Program to Replace each element by its Rank in the given Array
+
+
+arr = list(map(int, input("Enter array: ").split()))
+
+# Short version: directly assign rank using sorted + index
+ranked_arr = [sorted(arr).index(x)+1 for x in arr]
+
+print(ranked_arr)
+
+
+________________________________________________________________________________________________________________
+
+37. Python program for rotation of elements of array- left and right
+
+
+arr = list(map(int, input("Enter array: ").split()))
+
+
+right_rot = arr[-1:] + arr[:-1]
+left_rot = arr[1:] + arr[:1]
+
+print(right_rot)
+print(left_rot)
+
+________________________________________________________________________________________
+38. Python program for Block swapping algorithm for array rotation
+
+
+
+arr = [10, 20, 30, 40, 50, 60, 70];
+
+
+block_swap = arr[2:] + arr[:2]
+
+print(block_swap)
+
+#30 40 50 60 70 10 20
+
+___________________________________________________________________________________________________________________________
+39. Python program to find Juggling algorithm for array rotation
+
+
+
+arr = list(map(int, input("Enter the array").split()))
+
+
+print("Array Elements before rotation :", arr)
+
+after_rotate = arr[2:] + arr[:-2]
+
+print("Array Elements after rotation :",after_rotate)
+
+#Enter the array3 1 2 3
+#Array Elements before rotation : [3, 1, 2, 3]
+#Array Elements after rotation : [2, 3, 3, 1]
+
+________________________________________________________________________________________________
+40. Python program for finding the circular rotations of array by k positions
+
+arr=[1,2,3,4,5]
+#d=2
+
+#out = arr[d:]+arr[:d]
+
+arr_our = arr[2:] + arr[:-3]
+print(arr_our)
+
+# output [3, 4, 5, 1, 2]
+_______________________________________________________________________________________________________
+
+41.  Program to Check Balanced of Parenthesis in Python
+
+
+s = input("Enter string: ")
+
+while "()" in s or "[]" in s or "{}" in s:
+    s = s.replace("()", "").replace("[]", "").replace("{}", "")
+
+if s == "":
+    print("Balanced")
+else:
+    print("Not Balanced")
