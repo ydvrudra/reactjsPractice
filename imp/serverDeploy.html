@@ -1,0 +1,114 @@
+deploy your code on server step by step process
+
+
+step 1 upload code on git 
+
+   - create a new repo on git hub and start this command on vs  code terminal ya cmd same code folder directory but if your's repo is public
+
+    - git init 
+
+    - git add .
+
+    - git commit -m "any"
+ 
+    - git branch -M main (check if your's master branch change main to master)
+  
+    - git remote add origin https://github.com/ydvrudra/example_repo.git
+
+    - git push -u origin main
+
+ 
+     
+     - for private repo commands
+
+        - git config --global user.name "your user name"
+         
+        - git config --global user.email "your email" 
+
+
+     - for code changes git upload commands
+
+
+        - git add .
+
+        - git commit -m "any"
+
+        - git push -u origin main
+
+
+step 2
+
+- create a new folder like example - D:\ttsl_trucksuggestion open this folder in cmd and clone git repo on this folder 
+
+-  git clone https://github.com/ydvrudra/ttsl.git 
+
+- cd ttsl - D:\ttsl_trucksuggestion\ttsl
+
+- npm install 
+
+- pm2 start index.js
+
+
+- open note pad and create the web.config file  and save this save this web config file in same folder- D:\ttsl_trucksuggestion\ttsl
+
+- this is web config
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <!-- Redirect all traffic to Node.js -->
+        <rule name="RedirectAll" stopProcessing="true">
+          <match url=".*" />
+          <action type="Rewrite" url="http://localhost:5000/{R:0}" />
+        </rule>
+      </rules>
+    </rewrite>
+    
+    <!-- Proxy settings -->
+    <proxy enabled="true" />
+  </system.webServer>
+</configuration>
+
+
+
+- same open note pad and create .env file and save same folder directory
+
+
+step 3 ---
+
+
+- open in iis and double click on sites and add new site 
+
+- click on binding 
+    -  ip address - All Unassigned ya current ip address
+    -  port 80 ya anything
+    -  host name - blank ya add
+
+- basic settings-
+    - add site name - ttsl_trucksuggestionapi(example)
+    - same application pool- ttsl_trucksuggestionapi (same)
+    - physical path - add physical path where is you all backend files or web. config like this example D:\ttsl_trucksuggestion\ttsl
+
+-  double click on direct browersing and click on enable 
+
+- click on restart and browersing your api url 
+
+
+step 4 for code changes redeploying process
+
+   
+      - git pull in same folder 
+
+      - pm2 stop all 
+     
+      - pm2 start index.js 
+
+      - restart your iis site 
+
+
+
+ 
+
+
